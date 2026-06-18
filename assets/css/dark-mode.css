@@ -1,0 +1,62 @@
+/* Custom Dark Mode Overrides */
+[data-theme="dark"] {
+  /* Override custom colors or base variables here if needed */
+  --color-primary-light: #312e81;
+  --color-secondary-light: #115e59;
+}
+
+/* Ensure smooth dark mode transition on elements that need it */
+.theme-transition {
+  transition: background-color 0.3s ease, border-color 0.3s ease, text-color 0.3s ease, fill 0.3s ease;
+}
+
+/* Fix visibility issues of slate text colors in dark mode */
+.dark .text-slate-900,
+.dark [data-theme="dark"] .text-slate-900 {
+  color: #f8fafc !important; /* slate-50 */
+}
+
+.dark .text-slate-800,
+.dark [data-theme="dark"] .text-slate-800 {
+  color: #f1f5f9 !important; /* slate-100 */
+}
+
+.dark .text-slate-750,
+.dark .text-slate-700,
+.dark .text-slate-650,
+.dark .text-slate-600,
+.dark [data-theme="dark"] .text-slate-700,
+.dark [data-theme="dark"] .text-slate-600 {
+  color: #cbd5e1 !important; /* slate-300 */
+}
+
+.dark .text-slate-550,
+.dark .text-slate-500,
+.dark .text-slate-450,
+.dark .text-slate-400,
+.dark [data-theme="dark"] .text-slate-500,
+.dark [data-theme="dark"] .text-slate-400 {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+/* Fix background elements that might remain light in dark mode */
+.dark .bg-slate-50,
+.dark [data-theme="dark"] .bg-slate-50 {
+  background-color: #1e293b !important; /* slate-800 */
+}
+
+.dark .bg-slate-100,
+.dark [data-theme="dark"] .bg-slate-100 {
+  background-color: #1e293b !important; /* slate-800 */
+}
+
+.dark .bg-white,
+.dark [data-theme="dark"] .bg-white {
+  background-color: #0f172a !important; /* slate-900 */
+}
+
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark [data-theme="dark"] .border-slate-200 {
+  border-color: #334155 !important; /* slate-700 */
+}

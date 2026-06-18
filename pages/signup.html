@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-transition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — EduAcademy</title>
+  
+  <!-- CSS Stylesheets -->
+  <link class="theme-style" rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5',
+              light: '#e0e7ff',
+              dark: '#3730a3',
+              hover: '#4338ca',
+            },
+            secondary: {
+              DEFAULT: '#0d9488',
+              light: '#ccfbf1',
+              dark: '#115e59',
+              hover: '#0f766e',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body min-h-screen flex items-center justify-center relative p-4 transition-colors duration-300">
+  
+  <!-- Top Right Icons (Dark Mode and RTL) -->
+  <div class="absolute top-4 right-4 flex items-center space-x-2 z-50">
+    <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle LTR/RTL">
+          RTL
+        </button>
+    <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+      <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+      <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+    </button>
+  </div>
+
+  <!-- Sign Up Card Container -->
+  <div class="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6 relative z-10 page-transition">
+    <!-- Logo Inside Card -->
+    <div class="text-center space-y-2">
+            <a href="index.html" class="inline-flex items-center space-x-2">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </a>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white pt-2">Create Free Account</h2>
+      <p class="text-xs text-slate-500 dark:text-slate-400">Get access to standard resources and curriculum lessons</p>
+    </div>
+
+    <!-- Sign Up Form -->
+    <form class="space-y-4" onsubmit="event.preventDefault(); window.location.href='user-dashboard.html'">
+      <!-- Full Name -->
+      <div class="space-y-1">
+        <label class="text-xs font-bold text-slate-650 dark:text-slate-355">Full Name</label>
+        <div class="relative flex items-center">
+          <i data-lucide="user" class="w-4 h-4 absolute left-3.5 text-slate-400"></i>
+          <input type="text" placeholder="John Doe" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm outline-none focus:border-primary">
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="space-y-1">
+        <label class="text-xs font-bold text-slate-650 dark:text-slate-355">Email Address</label>
+        <div class="relative flex items-center">
+          <i data-lucide="mail" class="w-4 h-4 absolute left-3.5 text-slate-400"></i>
+          <input type="email" placeholder="you@example.com" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm outline-none focus:border-primary">
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="space-y-1">
+        <label class="text-xs font-bold text-slate-650 dark:text-slate-355">Password</label>
+        <div class="relative flex items-center">
+          <i data-lucide="lock" class="w-4 h-4 absolute left-3.5 text-slate-400"></i>
+          <input type="password" id="signup-pass" placeholder="••••••••" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl pl-10 pr-10 py-2.5 text-sm outline-none focus:border-primary">
+          <button type="button" onclick="togglePassVisibility('signup-pass', 'eye-open-s', 'eye-closed-s')" class="absolute right-3.5 text-slate-455 text-slate-400 hover:text-slate-650 dark:hover:text-slate-200">
+            <i data-lucide="eye" id="eye-open-s" class="w-4.5 h-4.5 block"></i>
+            <i data-lucide="eye-off" id="eye-closed-s" class="w-4.5 h-4.5 hidden"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Terms and Conditions Checkbox -->
+      <label class="flex items-center space-x-2 text-xs text-slate-650 dark:text-slate-355 cursor-pointer w-max">
+        <input type="checkbox" required class="rounded text-primary focus:ring-primary">
+        <span>I agree to the Terms of Service & Privacy Policy</span>
+      </label>
+
+      <!-- Submit -->
+      <button type="submit" class="w-full py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/10">
+        Sign Up
+      </button>
+    </form>
+
+    <!-- Social Sign In divider -->
+    <div class="relative flex items-center justify-center pt-2">
+      <div class="absolute inset-x-0 h-px bg-slate-200 dark:bg-slate-800"></div>
+      <span class="relative bg-white dark:bg-slate-900 px-3 text-[10px] uppercase font-bold text-slate-400">Or continue with</span>
+    </div>
+
+    <!-- Social Buttons -->
+    <div class="grid grid-cols-2 gap-4">
+      <button onclick="window.location.href='user-dashboard.html'" class="flex items-center justify-center space-x-2 py-2 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <i data-lucide="chrome" class="w-4 h-4 text-red-500"></i>
+        <span>Google</span>
+      </button>
+      <button onclick="window.location.href='user-dashboard.html'" class="flex items-center justify-center space-x-2 py-2 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <i data-lucide="apple" class="w-4 h-4 text-slate-800 dark:text-slate-200"></i>
+        <span>Apple</span>
+      </button>
+    </div>
+
+    <!-- Login redirect -->
+    <div class="text-center text-xs text-slate-500 dark:text-slate-455 pt-2 border-t border-slate-100 dark:border-slate-800">
+      Already have an account? <a href="login.html" class="text-primary font-bold hover:underline">Log in here</a>
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    function togglePassVisibility(id, eyeOpenId, eyeClosedId) {
+      const input = document.getElementById(id);
+      const open = document.getElementById(eyeOpenId);
+      const closed = document.getElementById(eyeClosedId);
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        open.classList.add('hidden');
+        closed.classList.remove('hidden');
+      } else {
+        input.type = 'password';
+        open.classList.remove('hidden');
+        closed.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-transition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — EduAcademy</title>
+  
+  <!-- CSS Stylesheets -->
+  <link class="theme-style" rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5',
+              light: '#e0e7ff',
+              dark: '#3730a3',
+              hover: '#4338ca',
+            },
+            secondary: {
+              DEFAULT: '#0d9488',
+              light: '#ccfbf1',
+              dark: '#115e59',
+              hover: '#0f766e',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body min-h-screen flex items-center justify-center relative p-4 transition-colors duration-300">
+  
+  <!-- Top Right Icons (Dark Mode and RTL) -->
+  <div class="absolute top-4 right-4 flex items-center space-x-2 z-50">
+    <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle LTR/RTL">
+          RTL
+        </button>
+    <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+      <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+      <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+    </button>
+  </div>
+
+  <!-- Login Card Container -->
+  <div class="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6 relative z-10 page-transition">
+    <!-- Logo Inside Card -->
+    <div class="text-center space-y-2">
+            <a href="index.html" class="inline-flex items-center space-x-2">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </a>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white pt-2">Welcome Back</h2>
+      <p class="text-xs text-slate-500 dark:text-slate-400">Log in to check your live sessions schedule</p>
+    </div>
+
+    <!-- Login Form -->
+    <form class="space-y-4" onsubmit="event.preventDefault(); window.location.href='user-dashboard.html'">
+      <!-- Email -->
+      <div class="space-y-1">
+        <label class="text-xs font-bold text-slate-650 dark:text-slate-350">Email Address</label>
+        <div class="relative flex items-center">
+          <i data-lucide="mail" class="w-4 h-4 absolute left-3.5 text-slate-400"></i>
+          <input type="email" placeholder="you@example.com" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm outline-none focus:border-primary">
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="space-y-1">
+        <div class="flex items-center justify-between">
+          <label class="text-xs font-bold text-slate-650 dark:text-slate-350">Password</label>
+          <a href="#" class="text-[10px] text-primary hover:underline">Forgot password?</a>
+        </div>
+        <div class="relative flex items-center">
+          <i data-lucide="lock" class="w-4 h-4 absolute left-3.5 text-slate-400"></i>
+          <input type="password" id="login-pass" placeholder="••••••••" required class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl pl-10 pr-10 py-2.5 text-sm outline-none focus:border-primary">
+          <button type="button" onclick="togglePassVisibility()" class="absolute right-3.5 text-slate-455 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+            <i data-lucide="eye" id="eye-open" class="w-4.5 h-4.5 block"></i>
+            <i data-lucide="eye-off" id="eye-closed" class="w-4.5 h-4.5 hidden"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Remember Me -->
+      <label class="flex items-center space-x-2 text-xs text-slate-650 dark:text-slate-350 cursor-pointer w-max">
+        <input type="checkbox" class="rounded text-primary focus:ring-primary">
+        <span>Remember me on this browser</span>
+      </label>
+
+      <!-- Submit -->
+      <button type="submit" class="w-full py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/10">
+        Log In
+      </button>
+    </form>
+
+    <!-- Social Sign In divider -->
+    <div class="relative flex items-center justify-center pt-2">
+      <div class="absolute inset-x-0 h-px bg-slate-200 dark:bg-slate-800"></div>
+      <span class="relative bg-white dark:bg-slate-900 px-3 text-[10px] uppercase font-bold text-slate-400">Or continue with</span>
+    </div>
+
+    <!-- Social Buttons -->
+    <div class="grid grid-cols-2 gap-4">
+      <button onclick="window.location.href='user-dashboard.html'" class="flex items-center justify-center space-x-2 py-2 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <i data-lucide="chrome" class="w-4 h-4 text-red-500"></i>
+        <span>Google</span>
+      </button>
+      <button onclick="window.location.href='user-dashboard.html'" class="flex items-center justify-center space-x-2 py-2 border border-slate-200 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <i data-lucide="apple" class="w-4 h-4 text-slate-800 dark:text-slate-200"></i>
+        <span>Apple</span>
+      </button>
+    </div>
+
+    <!-- Sign up redirect -->
+    <div class="text-center text-xs text-slate-500 dark:text-slate-450 pt-2 border-t border-slate-100 dark:border-slate-800">
+      Don't have an academy account? <a href="signup.html" class="text-primary font-bold hover:underline">Sign up free</a>
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    function togglePassVisibility() {
+      const input = document.getElementById('login-pass');
+      const open = document.getElementById('eye-open');
+      const closed = document.getElementById('eye-closed');
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        open.classList.add('hidden');
+        closed.classList.remove('hidden');
+      } else {
+        input.type = 'password';
+        open.classList.remove('hidden');
+        closed.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

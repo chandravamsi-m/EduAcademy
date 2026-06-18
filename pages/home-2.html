@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-transition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduAcademy — Academy Premium Homepage</title>
+  <meta name="description" content="Discover professional online tutoring, expert courses, and interactive live learning experiences. Start learning today with EduAcademy.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5',
+              light: '#e0e7ff',
+              dark: '#3730a3',
+              hover: '#4338ca',
+            },
+            secondary: {
+              DEFAULT: '#0d9488',
+              light: '#ccfbf1',
+              dark: '#115e59',
+              hover: '#0f766e',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body transition-colors duration-300">
+  
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6">
+        <!-- Home Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-primary dark:text-primary font-medium focus-ring text-sm py-2 text-sm">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="index.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-t-xl font-medium">Home 1</a>
+            <a href="home-2.html" class="block px-4 py-3 text-primary bg-slate-50 dark:bg-slate-800 rounded-b-xl font-medium">Home 2</a>
+          </div>
+        </div>
+        
+        <a href="about.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">About</a>
+        <a href="courses.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Courses</a>
+        <a href="instructors.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Instructors</a>
+        <a href="blog.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Resources</a>
+        <a href="contact.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Contact</a>
+        <!-- Dashboard Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm py-2 text-sm">
+            <span>Dashboard</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="user-dashboard.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-t-xl font-medium">Student Dashboard</a>
+            <a href="admin-dashboard.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-b-xl font-medium">Admin Dashboard</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Nav Buttons (CTAs & Toggles) -->
+      <div class="hidden lg:flex items-center gap-2">
+        <!-- RTL Toggle -->
+        <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle LTR/RTL">
+          RTL
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+          <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+
+        <a href="login.html" class="px-4 py-2 border border-primary text-primary font-medium rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-850 transition-colors focus-ring text-sm">Login</a>
+        <a href="enroll.html" class="px-5 py-2 bg-primary hover:bg-primary-hover text-white font-medium rounded-xl transition-all shadow-md shadow-indigo-500/20 focus-ring">Enroll Now</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex lg:hidden items-center space-x-2">
+        <button id="mobile-menu-toggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 focus-ring" aria-label="Open Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 bottom-0 z-50 w-4/5 max-w-[300px] bg-white dark:bg-slate-900 shadow-2xl p-6 transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto hidden lg:hidden space-y-6">
+    <!-- Drawer Header -->
+    <div class="flex items-center justify-between pb-6 border-b border-slate-100 dark:border-slate-800">
+      <div class="flex items-center space-x-2">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 focus-ring" aria-label="Close Menu">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-2">
+      <!-- Home Dropdown -->
+      <div class="space-y-1">
+        <button class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-primary dark:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 font-medium" onclick="toggleMobileDropdown('mobile-home-dropdown')">
+          <span>Home</span>
+          <i id="mobile-home-chevron" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+        </button>
+        <div id="mobile-home-dropdown" class="hidden pl-4 space-y-1">
+          <a href="index.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Home 1</a>
+          <a href="home-2.html" class="block px-3 py-2 rounded-lg text-primary bg-slate-50 dark:bg-slate-800 font-medium">Home 2</a>
+        </div>
+      </div>
+      
+      <a href="about.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">About</a>
+      <a href="courses.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Courses</a>
+      <a href="instructors.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Instructors</a>
+      <a href="blog.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Resources</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Contact</a>
+
+      <!-- Dashboard Dropdown -->
+      <div class="space-y-1">
+        <button class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium" onclick="toggleMobileDropdown('mobile-dashboard-dropdown')">
+          <span>Dashboard</span>
+          <i id="mobile-dashboard-chevron" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+        </button>
+        <div id="mobile-dashboard-dropdown" class="hidden pl-4 space-y-1">
+          <a href="user-dashboard.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Student Dashboard</a>
+          <a href="admin-dashboard.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Admin Dashboard</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Drawer Footer (Toggles & CTAs) -->
+    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+      <!-- Theme & RTL Toggles inside Mobile Menu -->
+      <div class="flex items-center justify-between gap-4">
+        <span class="text-sm font-medium text-slate-600 dark:text-slate-400">Settings</span>
+        <div class="flex items-center space-x-2">
+          <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle RTL">
+            RTL
+          </button>
+          <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+            <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Login & Register/Enroll CTA -->
+      <div class="flex flex-col space-y-2">
+        <a href="login.html" class="w-full text-center px-4 py-2 border border-primary text-primary font-medium rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-850 transition-colors focus-ring text-sm">Login</a>
+        <a href="enroll.html" class="w-full text-center px-4 py-2 bg-primary text-white font-medium rounded-xl">Enroll Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="page-transition">
+    <!-- 1. Hero Section (Split-Screen) -->
+    <section class="py-16 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-teal-50/35 dark:from-slate-900 dark:via-slate-950 dark:to-teal-950/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Side: Copy, trust badge, CTA -->
+        <div class="space-y-6 text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start space-x-2">
+            <span class="px-2.5 py-1 rounded bg-secondary/15 text-secondary text-xs font-bold uppercase tracking-wider">PREMIUM EDUCATION</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Trusted globally</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+            Learn Smarter. <span class="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Succeed Faster.</span>
+          </h1>
+          <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+            A comprehensive, personalized online tutoring service giving students direct access to master teachers, practice workflows, and analytical feedback.
+          </p>
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <a href="signup.html" class="px-6 py-3.5 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl shadow-lg shadow-indigo-500/20 transition-all flex items-center space-x-2">
+              <span>Join Free Trial</span>
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </a>
+            <a href="courses.html" class="px-6 py-3.5 bg-white hover:bg-slate-50 border border-slate-300 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold rounded-xl transition-all">
+              Explore Course Catalog
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-center lg:justify-start gap-6 text-slate-500 text-xs">
+            <div class="flex items-center space-x-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-secondary"></i>
+              <span>ISO 9001:2015 Certified</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i data-lucide="award" class="w-5 h-5 text-secondary"></i>
+              <span>A+ Quality Curriculum Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Interactive Course Preview Card -->
+        <div class="relative flex justify-center">
+          <div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span class="font-bold text-slate-900 dark:text-white">Sample Lesson Outline</span>
+              <span class="text-xs bg-slate-100 dark:bg-slate-850 px-2 py-1 rounded text-slate-500 dark:text-slate-400">Lesson 1 of 8</span>
+            </div>
+            
+            <div class="relative aspect-video rounded-2xl overflow-hidden bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
+              <!-- Video Placeholder overlay -->
+              <div class="absolute inset-0 bg-slate-900/10 dark:bg-slate-900/30 flex items-center justify-center">
+                <button class="w-14 h-14 bg-white/95 dark:bg-slate-900/95 text-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                  <i data-lucide="play" class="w-6 h-6 fill-primary"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="font-bold text-slate-900 dark:text-white">Quadratic Equations & Polynomial Functions</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+                Dr. John Doe explains the fundamentals of solving multi-variable equations with step-by-step whiteboard methods.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-slate-150 dark:border-slate-800">
+              <div class="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>Downloadable Slides & PDF Worksheet</span>
+              </div>
+              <span class="text-xs font-bold text-emerald-500">Free Access</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Trusted By Logo Strip -->
+    <section class="py-8 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Recommended By Leading Academic Hubs</p>
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-50 dark:opacity-40">
+          <span class="text-lg font-bold tracking-wider">ACADEMY NETWORK</span>
+          <span class="text-lg font-bold tracking-wider">EDU-NETWORK</span>
+          <span class="text-lg font-bold tracking-wider">GLOBAL LEARNING CO.</span>
+          <span class="text-lg font-bold tracking-wider">APEX ACADEMY</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Course Explorer -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Interactive Course Explorer</h2>
+          <p class="text-slate-600 dark:text-slate-400">Filter and discover matching courses by selecting a subject track below.</p>
+        </div>
+
+        <!-- Tab Controls -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+          <button onclick="filterExplorer('all')" class="explorer-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-primary text-white">All Tracks</button>
+          <button onclick="filterExplorer('science')" class="explorer-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 dark:bg-slate-900 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:bg-slate-100 dark:hover:bg-slate-850">Science & Tech</button>
+          <button onclick="filterExplorer('math')" class="explorer-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 dark:bg-slate-900 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:bg-slate-100 dark:hover:bg-slate-850">Mathematics</button>
+          <button onclick="filterExplorer('language')" class="explorer-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-slate-200 dark:bg-slate-900 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:bg-slate-100 dark:hover:bg-slate-850">Languages</button>
+        </div>
+
+        <!-- Explorer Grid -->
+        <div id="explorer-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Item 1 -->
+          <div class="explorer-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm" data-category="science">
+            <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200">Science & Tech</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-lg">Introduction to Physics (Mechanics)</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">Forces, motion, energy, and Newtonian physics principles mapped to standard syllabi.</p>
+            <a href="course-detail.html" class="inline-flex items-center space-x-1 text-xs font-bold text-primary hover:underline">
+              <span>View Curriculum</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-flip"></i>
+            </a>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="explorer-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm" data-category="math">
+            <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-200">Mathematics</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-lg">High School Algebra & Pre-Calculus</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">Solve quadratic inequalities, functions, graphs, complex numbers, and basic calculus steps.</p>
+            <a href="course-detail.html" class="inline-flex items-center space-x-1 text-xs font-bold text-primary hover:underline">
+              <span>View Curriculum</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-flip"></i>
+            </a>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="explorer-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm" data-category="language">
+            <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-200">Languages</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-lg">Conversational French for Intermediate Learners</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">Perfect your accent, learn core dialogue expressions, and practice with real-world scenarios.</p>
+            <a href="course-detail.html" class="inline-flex items-center space-x-1 text-xs font-bold text-primary hover:underline">
+              <span>View Curriculum</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-flip"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Learning Outcomes -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Checklist -->
+        <div class="space-y-6">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Structured Learning Outcomes</h2>
+          <p class="text-slate-600 dark:text-slate-400">
+            Our platform guarantees measured academic growth for all enrolled members through structured steps.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center text-primary mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Verified Certifications</h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Earn verifiable certificates of completion matching accreditation criteria.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center text-primary mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Interactive Homework Tracking</h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Get homework graded online by designated expert tutors with customized feedback.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center text-primary mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Targeted Weak Topic Analytics</h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400">See weak subjects and score improvements in the user dashboard charts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Mockup -->
+        <div class="relative bg-slate-100 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl space-y-6">
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Dashboard Preview</span>
+            <div class="flex space-x-1">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+            </div>
+          </div>
+          <!-- Sample Dashboard Metric Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Course Progress</span>
+              <p class="text-xl font-extrabold text-slate-950 dark:text-white mt-1">82%</p>
+              <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden mt-2">
+                <div class="bg-indigo-600 h-full w-[82%]"></div>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Homework Graded</span>
+              <p class="text-xl font-extrabold text-slate-950 dark:text-white mt-1">14 / 16</p>
+              <span class="text-[10px] text-emerald-500 mt-1 block">92% Average Score</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Instructor Spotlight -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Photo/Credentials -->
+        <div class="flex justify-center">
+          <div class="relative bg-gradient-to-tr from-secondary/20 to-primary/20 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 text-center space-y-4 max-w-sm w-full">
+            <div class="w-32 h-32 rounded-full bg-indigo-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-primary text-4xl font-bold shadow-lg">
+              JD
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Dr. John Doe</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Ph.D. in Computer Science (MIT)</p>
+            </div>
+            <p class="text-xs text-slate-650 dark:text-slate-350 max-w-xs mx-auto leading-relaxed">
+              Dr. John Doe has coached over 15,000 students in core engineering and mathematics subjects over the past 12 years.
+            </p>
+            <div class="flex justify-center space-x-2 pt-2">
+              <span class="px-2.5 py-1 bg-indigo-50 dark:bg-indigo-950/60 rounded text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase">Physics</span>
+              <span class="px-2.5 py-1 bg-teal-50 dark:bg-teal-950/60 rounded text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase">Web Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Credentials copy & Course list -->
+        <div class="space-y-6">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider">Instructor Spotlight</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Learn from Dr. John Doe</h2>
+          <p class="text-slate-650 dark:text-slate-350 leading-relaxed">
+            Gain academic guidance from our lead instructor. Sign up for his premium web engineering or math classes to experience real-time peer coding and interactive feedback.
+          </p>
+          <div class="space-y-3 border-t border-slate-200 dark:border-slate-800 pt-6">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Active Courses Hosted by Dr. Doe</h4>
+            <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="book-open" class="w-4 h-4 text-primary"></i>
+                <span>Introduction to Web Development with HTML & CSS</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="book-open" class="w-4 h-4 text-primary"></i>
+                <span>Algorithmic Design & Python Programming Principles</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Live Session Timeline (Weekly Timetable) -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Live Classroom Schedule</h2>
+          <p class="text-slate-600 dark:text-slate-400">Upcoming weekly webinars, Q&A support workshops, and active tutoring schedules.</p>
+        </div>
+
+        <!-- Weekly Timetable Grid -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Mon -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-2xl p-6 bg-slate-50 dark:bg-slate-800 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-2">
+              <span class="font-bold text-slate-900 dark:text-white">Monday</span>
+              <span class="text-[10px] bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-200 px-2 py-0.5 rounded font-bold uppercase">Active Session</span>
+            </div>
+            <div class="space-y-3">
+              <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-slate-450 text-slate-400 font-bold block">10:00 AM — 11:30 AM</span>
+                <p class="text-sm font-bold text-slate-900 dark:text-white mt-1">Calculus: Limits & Integrals</p>
+                <p class="text-xs text-slate-500 mt-0.5">Tutor: Dr. Maria Silva</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wed -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-2xl p-6 bg-slate-50 dark:bg-slate-800 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-2">
+              <span class="font-bold text-slate-900 dark:text-white">Wednesday</span>
+              <span class="text-[10px] bg-teal-100 text-teal-700 dark:bg-teal-950 dark:text-teal-200 px-2 py-0.5 rounded font-bold uppercase">Workshop</span>
+            </div>
+            <div class="space-y-3">
+              <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-slate-450 text-slate-400 font-bold block">02:00 PM — 03:30 PM</span>
+                <p class="text-sm font-bold text-slate-900 dark:text-white mt-1">Web Dev: CSS Grid & Flexbox</p>
+                <p class="text-xs text-slate-500 mt-0.5">Tutor: John Doe</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fri -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-2xl p-6 bg-slate-50 dark:bg-slate-800 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-2">
+              <span class="font-bold text-slate-900 dark:text-white">Friday</span>
+              <span class="text-[10px] bg-pink-100 text-pink-700 dark:bg-pink-950 dark:text-pink-200 px-2 py-0.5 rounded font-bold uppercase">QA Session</span>
+            </div>
+            <div class="space-y-3">
+              <div class="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-slate-450 text-slate-400 font-bold block">04:00 PM — 05:00 PM</span>
+                <p class="text-sm font-bold text-slate-900 dark:text-white mt-1">Spanish Dialogue Q&A Prep</p>
+                <p class="text-xs text-slate-500 mt-0.5">Tutor: Anna Garcia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Progress Showcase (Success metrics) -->
+    <section class="py-16 bg-primary text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <h3 class="text-4xl font-extrabold">94%</h3>
+          <p class="text-indigo-200 text-sm mt-1">Average Grade Boost</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-extrabold">12k+</h3>
+          <p class="text-indigo-200 text-sm mt-1">Passed Quizzes</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-extrabold">100%</h3>
+          <p class="text-indigo-200 text-sm mt-1">Mobile Accessible</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-extrabold">24/7</h3>
+          <p class="text-indigo-200 text-sm mt-1">Tutor Chat Access</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Testimonials (Video Trigger Overlay Mock) -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="text-xs font-bold text-secondary uppercase">Success Stories</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Hear from Our Enrolled Triumphs</h2>
+          <p class="text-slate-600 dark:text-slate-400">
+            Learn how Michael boosted his mathematics credentials from C to A+ in just 10 weeks of structured live Q&A sessions.
+          </p>
+          <div class="p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl relative">
+            <p class="text-sm italic text-slate-700 dark:text-slate-300">
+              "The custom dashboard reports showing my learning trajectory guided my weekly prep sessions accurately. Dr. Silva was extremely patient during calculations."
+            </p>
+            <p class="text-xs font-bold text-slate-900 dark:text-white mt-4">— Michael K., Calculus Pro Member</p>
+          </div>
+        </div>
+
+        <div class="relative bg-slate-950 rounded-3xl overflow-hidden aspect-video shadow-2xl flex items-center justify-center group">
+          <div class="absolute inset-0 bg-indigo-500/10 opacity-70 group-hover:opacity-40 transition-opacity"></div>
+          <button class="w-16 h-16 rounded-full bg-white dark:bg-slate-900 text-primary flex items-center justify-center hover:scale-110 transition-transform shadow-xl relative z-10">
+            <i data-lucide="play" class="w-6 h-6 fill-primary"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Comparison Pricing Table -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Compare Membership Features</h2>
+          <p class="text-slate-600 dark:text-slate-400">Discover which plan matches your academic preparation goals.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto overflow-x-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-xl">
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850/50">
+                <th class="p-6 text-sm font-bold text-slate-900 dark:text-white">Core Offerings</th>
+                <th class="p-6 text-sm font-bold text-slate-900 dark:text-white">Basic (Free)</th>
+                <th class="p-6 text-sm font-bold text-primary">Pro ($29)</th>
+                <th class="p-6 text-sm font-bold text-slate-900 dark:text-white">Premium ($79)</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-slate-700 dark:text-slate-300 divide-y divide-slate-100 dark:divide-slate-800">
+              <tr>
+                <td class="p-6 font-semibold">Course Catalog Access</td>
+                <td class="p-6">5 Free Courses</td>
+                <td class="p-6">60+ Courses</td>
+                <td class="p-6">All Courses</td>
+              </tr>
+              <tr>
+                <td class="p-6 font-semibold">Live Classroom Access</td>
+                <td class="p-6"><i data-lucide="x" class="w-4 h-4 text-red-500"></i></td>
+                <td class="p-6">Weekly Session</td>
+                <td class="p-6">Unlimited Sessions</td>
+              </tr>
+              <tr>
+                <td class="p-6 font-semibold">Homework Assessment</td>
+                <td class="p-6"><i data-lucide="x" class="w-4 h-4 text-red-500"></i></td>
+                <td class="p-6">Static feedback</td>
+                <td class="p-6">1-on-1 Grading</td>
+              </tr>
+              <tr>
+                <td class="p-6 font-semibold">Custom Analytics Reports</td>
+                <td class="p-6"><i data-lucide="x" class="w-4 h-4 text-red-500"></i></td>
+                <td class="p-6"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i></td>
+                <td class="p-6"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ Accordion -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-3 mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+          <p class="text-slate-600 dark:text-slate-400">Get quick answers regarding class registrations, cancellations, and credentials.</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Accordion Row 1 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+            <button class="faq-header w-full p-6 text-left flex justify-between items-center bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <span class="font-bold text-slate-900 dark:text-white">Can I change my subscription plan later?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-250"></i>
+            </button>
+            <div class="hidden p-6 bg-white dark:bg-slate-900 text-sm text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800">
+              Yes, you can upgrade, downgrade, or cancel your Pro/Premium membership directly in the Payments section of your Student Dashboard. Changes will take effect at the start of your next billing cycle.
+            </div>
+          </div>
+
+          <!-- Accordion Row 2 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+            <button class="faq-header w-full p-6 text-left flex justify-between items-center bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <span class="font-bold text-slate-900 dark:text-white">How do live classrooms work?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-250"></i>
+            </button>
+            <div class="hidden p-6 bg-white dark:bg-slate-900 text-sm text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800">
+              Live sessions run on our custom built-in whiteboard system inside the student dashboard. Click the "Join Now" CTA in your timeline when the session commences to enter the video feed.
+            </div>
+          </div>
+
+          <!-- Accordion Row 3 -->
+          <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+            <button class="faq-header w-full p-6 text-left flex justify-between items-center bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <span class="font-bold text-slate-900 dark:text-white">Are tutoring certificates internationally recognized?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-250"></i>
+            </button>
+            <div class="hidden p-6 bg-white dark:bg-slate-900 text-sm text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800">
+              All EduAcademy certifications prove course syllabus completions under designated tutor oversight, serving as verifiable proof of curriculum training on social platforms like LinkedIn.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Newsletter CTA -->
+    <section class="py-20 bg-slate-950 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/40 via-transparent to-transparent pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-4 text-center space-y-6 relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Get Weekly Free Study Materials</h2>
+        <p class="text-slate-400 max-w-lg mx-auto text-sm">
+          Join 8,000+ students receiving weekly curated algebra homework sheets, calculus summaries, and resource links.
+        </p>
+        <form class="max-w-md mx-auto flex p-1 bg-white/10 dark:bg-slate-900/50 border border-white/20 rounded-2xl shadow-xl">
+          <input type="email" placeholder="Enter your email address" class="flex-1 bg-transparent border-0 focus:ring-0 text-white px-4 py-3 text-sm outline-none placeholder-slate-400">
+          <button type="submit" class="px-5 py-3 bg-secondary hover:bg-secondary-hover text-white font-semibold rounded-xl text-sm transition-colors shadow">
+            Get Study Resources
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. Footer -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-850">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Info Column -->
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center space-x-2 text-white">
+          <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+          <span class="text-lg font-bold">EduAcademy</span>
+        </a>
+        <p class="text-sm text-slate-400">
+          Empowering learners worldwide through interactive mentoring platforms and structured course curriculums.
+        </p>
+              <div class="flex space-x-3 text-slate-400">
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Course Catalog</a></li>
+          <li><a href="instructors.html" class="hover:text-white transition-colors">Expert Instructors</a></li>
+          <li><a href="blog.html" class="hover:text-white transition-colors">Academy Resources</a></li>
+        </ul>
+      </div>
+
+      <!-- Course Categories -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Categories</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="courses.html" class="hover:text-white transition-colors">Mathematics</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Science & Tech</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Coding Languages</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Beginner Spanish</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-4">
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider">Join Newsletter</h4>
+        <p class="text-xs text-slate-400">Subscribe for weekly exam guides and resource releases.</p>
+        <form class="flex border border-slate-800 rounded-lg overflow-hidden max-w-sm">
+          <input type="email" placeholder="Your email" class="flex-1 bg-slate-800 border-0 focus:ring-0 text-slate-200 px-3 py-2 text-xs outline-none">
+          <button type="submit" class="bg-primary hover:bg-primary-hover px-4 text-white text-xs font-semibold">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-4 sm:space-y-0">
+      <p>&copy; 2026 EduAcademy. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

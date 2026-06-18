@@ -1,0 +1,7 @@
+/* RTL Custom Overrides */
+[dir="rtl"] {
+  /* Flip arrows or icons that are directional */
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+}

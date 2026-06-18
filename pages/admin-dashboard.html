@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-transition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — EduAcademy</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5',
+              light: '#e0e7ff',
+              dark: '#3730a3',
+              hover: '#4338ca',
+            },
+            secondary: {
+              DEFAULT: '#0d9488',
+              light: '#ccfbf1',
+              dark: '#115e59',
+              hover: '#0f766e',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body transition-colors duration-300 min-h-screen flex flex-col">
+
+  <!-- Top Bar (Header) -->
+  <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 h-16 flex items-center justify-between px-6 sticky top-0 z-40">
+    <div class="flex items-center space-x-3">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <div class="w-8 h-8 bg-gradient-to-tr from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg">E</div>
+        <span class="text-base font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </a>
+      <span class="text-xs bg-indigo-100 dark:bg-indigo-950 text-primary px-2 py-0.5 rounded font-bold uppercase">Admin Portal</span>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="flex items-center space-x-4">
+      <button class="rtl-toggle-btn px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-sm" aria-label="Toggle RTL">
+        <i data-lucide="languages" class="w-4.5 h-4.5"></i>
+      </button>
+      <button class="theme-toggle-btn px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-sm flex items-center justify-center" aria-label="Toggle Theme">
+        <i data-lucide="sun" class="w-4.5 h-4.5 block dark:hidden"></i>
+        <i data-lucide="moon" class="w-4.5 h-4.5 hidden dark:block"></i>
+      </button>
+
+      <!-- Notifications -->
+      <div class="relative">
+        <button class="dropdown-toggle p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 relative focus-ring" data-dropdown="admin-notification-drop">
+          <i data-lucide="bell" class="w-4.5 h-4.5"></i>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500"></span>
+        </button>
+        <div id="admin-notification-drop" class="dropdown-menu hidden absolute right-0 mt-2 w-72 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl z-50">
+          <div class="p-3 border-b border-slate-150 dark:border-slate-800 text-xs font-bold text-slate-900 dark:text-white flex justify-between">
+            <span>Admin Alert Alerts</span>
+            <button onclick="document.querySelector('#admin-notification-drop').classList.add('hidden')" class="text-primary hover:underline font-semibold text-[10px]">Close</button>
+          </div>
+          <div class="p-2 space-y-1 text-xs">
+            <div class="p-2.5 bg-slate-50 dark:bg-slate-850 rounded-lg">
+              <p class="font-bold text-slate-900 dark:text-white">New Subscription Payment</p>
+              <p class="text-slate-500 mt-0.5">John Doe completed checkout for Calculus course.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar Drop -->
+      <div class="relative">
+        <button class="dropdown-toggle w-8 h-8 rounded-full bg-teal-150 dark:bg-slate-850 text-secondary font-bold text-xs flex items-center justify-center border border-slate-200 dark:border-slate-700" data-dropdown="admin-avatar-drop">
+          AD
+        </button>
+        <div id="admin-avatar-drop" class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl z-50 overflow-hidden">
+          <a href="index.html" class="block px-4 py-2.5 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Return to Home</a>
+          <a href="login.html" class="block px-4 py-2.5 text-xs text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 border-t border-slate-150 dark:border-slate-800">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar & Panel -->
+  <div class="flex-1 flex flex-col md:flex-row">
+    <!-- Sidebar Navigation -->
+    <aside class="w-full md:w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-4 space-y-2 flex flex-col justify-between">
+      <div class="space-y-1">
+        <button class="sidebar-link w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2.5 bg-indigo-600 text-white" data-section="overview">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Dashboard Overview</span>
+        </button>
+        <button class="sidebar-link w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2.5 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-800" data-section="students">
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>Student Management</span>
+        </button>
+        <button class="sidebar-link w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2.5 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-800" data-section="tutors">
+          <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+          <span>Instructor Directory</span>
+        </button>
+        <button class="sidebar-link w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2.5 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-800" data-section="courses">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
+          <span>Course Management</span>
+        </button>
+        <button class="sidebar-link w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2.5 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-800" data-section="revenue">
+          <i data-lucide="credit-card" class="w-4 h-4"></i>
+          <span>Payments & Revenue</span>
+        </button>
+        <button class="sidebar-link w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2.5 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-800" data-section="settings">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span>Site Settings</span>
+        </button>
+      </div>
+
+      <div class="pt-4 border-t border-slate-150 dark:border-slate-800">
+        <a href="login.html" class="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 flex items-center space-x-2.5">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="flex-1 p-6 sm:p-8 overflow-y-auto">
+      
+      <!-- ===== 1. OVERVIEW SECTION ===== -->
+      <section id="overview" class="dashboard-section space-y-6">
+        <div class="space-y-1">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Administrative Overview</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Review real-time enrollment statistics and transaction summaries.</p>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="grid sm:grid-cols-4 gap-6">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl shadow-sm space-y-3">
+            <span class="text-xs text-slate-400 font-bold block uppercase">Total Students</span>
+            <p class="text-3xl font-extrabold text-slate-950 dark:text-white">1,540</p>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl shadow-sm space-y-3">
+            <span class="text-xs text-slate-400 font-bold block uppercase">Active Tutors</span>
+            <p class="text-3xl font-extrabold text-slate-950 dark:text-white">82</p>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl shadow-sm space-y-3">
+            <span class="text-xs text-slate-400 font-bold block uppercase">Active Courses</span>
+            <p class="text-3xl font-extrabold text-slate-950 dark:text-white">124</p>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl shadow-sm space-y-3">
+            <span class="text-xs text-slate-400 font-bold block uppercase">Monthly Revenue</span>
+            <p class="text-3xl font-extrabold text-slate-950 dark:text-white">$12,450</p>
+          </div>
+        </div>
+
+        <!-- Skeleton loader preview block -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Real-time Platform Activity</h4>
+            <span class="text-[10px] text-slate-450">Checking updates...</span>
+          </div>
+          <div class="space-y-3">
+            <div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-lg w-full animate-pulse"></div>
+            <div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-lg w-5/6 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 2. STUDENT MANAGEMENT ===== -->
+      <section id="students" class="dashboard-section hidden space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Student Directory</h2>
+        
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 text-slate-450 uppercase font-bold">
+                  <th class="p-4">Student Name</th>
+                  <th class="p-4">Email</th>
+                  <th class="p-4">Enrolled Count</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                <tr>
+                  <td class="p-4 font-bold">John Doe</td>
+                  <td class="p-4">you@example.com</td>
+                  <td class="p-4">2 Courses</td>
+                  <td class="p-4"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">Active</span></td>
+                  <td class="p-4 text-right">
+                    <button class="text-red-500 hover:underline">Suspend</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold">Sarah Adams</td>
+                  <td class="p-4">sarah@domain.com</td>
+                  <td class="p-4">1 Course</td>
+                  <td class="p-4"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">Active</span></td>
+                  <td class="p-4 text-right">
+                    <button class="text-red-500 hover:underline">Suspend</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 3. TUTOR DIRECTORY ===== -->
+      <section id="tutors" class="dashboard-section hidden space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Academy Tutors</h2>
+        
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 text-slate-450 uppercase font-bold">
+                  <th class="p-4">Tutor Name</th>
+                  <th class="p-4">Specialty Track</th>
+                  <th class="p-4">Rating</th>
+                  <th class="p-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                <tr>
+                  <td class="p-4 font-bold">Dr. Maria Silva</td>
+                  <td class="p-4">Mathematics</td>
+                  <td class="p-4 font-bold text-amber-500">4.9/5.0</td>
+                  <td class="p-4 text-right">
+                    <button class="text-primary hover:underline">Edit Info</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold">John Doe</td>
+                  <td class="p-4">Web Development</td>
+                  <td class="p-4 font-bold text-amber-500">4.8/5.0</td>
+                  <td class="p-4 text-right">
+                    <button class="text-primary hover:underline">Edit Info</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 4. COURSE MANAGEMENT ===== -->
+      <section id="courses" class="dashboard-section hidden space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Platform Course Management</h2>
+        
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 text-slate-450 uppercase font-bold">
+                  <th class="p-4">Course Title</th>
+                  <th class="p-4">Category</th>
+                  <th class="p-4">Enrollment Count</th>
+                  <th class="p-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                <tr>
+                  <td class="p-4 font-bold">Introduction to Web Development</td>
+                  <td class="p-4">Development</td>
+                  <td class="p-4">1,420 Enrolled</td>
+                  <td class="p-4 text-right space-x-2">
+                    <button class="text-primary hover:underline">Modify</button>
+                    <button class="text-red-500 hover:underline">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 5. PAYMENTS & REVENUE ===== -->
+      <section id="revenue" class="dashboard-section hidden space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Transaction Logs</h2>
+        
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 text-slate-450 uppercase font-bold">
+                  <th class="p-4">Ref ID</th>
+                  <th class="p-4">Student</th>
+                  <th class="p-4">Amount</th>
+                  <th class="p-4">Date</th>
+                  <th class="p-4">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                <tr>
+                  <td class="p-4 font-mono">TXN-49204</td>
+                  <td class="p-4">John Doe</td>
+                  <td class="p-4 font-bold text-primary">$49.99</td>
+                  <td class="p-4">June 18, 2026</td>
+                  <td class="p-4"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 6. SITE SETTINGS ===== -->
+      <section id="settings" class="dashboard-section hidden space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">General Academy Settings</h2>
+        
+        <form class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6" onsubmit="event.preventDefault()">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-slate-655">Academy Platform Title</label>
+              <input type="text" value="EduAcademy — Online Tutoring Portal" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-primary">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-slate-655">Admin Alert Email</label>
+              <input type="email" value="admin@eduacademy.com" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-primary">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-xs">Security Control</h3>
+            <label class="flex items-center space-x-2.5 text-xs text-slate-655 cursor-pointer">
+              <input type="checkbox" class="rounded text-primary focus:ring-primary">
+              <span>Enable maintenance block screen (deactivates public website access)</span>
+            </label>
+          </div>
+
+          <button type="submit" class="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl text-xs transition-all shadow">
+            Save Admin Preferences
+          </button>
+        </form>
+      </section>
+      
+    </main>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

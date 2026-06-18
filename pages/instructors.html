@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-transition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutors Directory — EduAcademy</title>
+  <meta name="description" content="Discover professional online tutoring experts at EduAcademy. Explore qualifications, subjects, and ratings.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5',
+              light: '#e0e7ff',
+              dark: '#3730a3',
+              hover: '#4338ca',
+            },
+            secondary: {
+              DEFAULT: '#0d9488',
+              light: '#ccfbf1',
+              dark: '#115e59',
+              hover: '#0f766e',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body transition-colors duration-300">
+  
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6">
+        <!-- Home Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm py-2 text-sm">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="index.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-t-xl font-medium">Home 1</a>
+            <a href="home-2.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-b-xl font-medium">Home 2</a>
+          </div>
+        </div>
+        
+        <a href="about.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">About</a>
+        <a href="courses.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Courses</a>
+        <a href="instructors.html" class="text-primary dark:text-primary font-medium focus-ring text-sm">Instructors</a>
+        <a href="blog.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Resources</a>
+        <a href="contact.html" class="text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm">Contact</a>
+        <!-- Dashboard Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary font-medium focus-ring text-sm py-2 text-sm">
+            <span>Dashboard</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="user-dashboard.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-t-xl font-medium">Student Dashboard</a>
+            <a href="admin-dashboard.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-b-xl font-medium">Admin Dashboard</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Nav Buttons (CTAs & Toggles) -->
+      <div class="hidden lg:flex items-center gap-2">
+        <!-- RTL Toggle -->
+        <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle LTR/RTL">
+          RTL
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+          <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+
+        <a href="login.html" class="px-4 py-2 border border-primary text-primary font-medium rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-850 transition-colors focus-ring text-sm">Login</a>
+        <a href="enroll.html" class="px-5 py-2 bg-primary hover:bg-primary-hover text-white font-medium rounded-xl transition-all shadow-md shadow-indigo-500/20 focus-ring">Enroll Now</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex lg:hidden items-center space-x-2">
+        <button id="mobile-menu-toggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 focus-ring" aria-label="Open Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 bottom-0 z-50 w-4/5 max-w-[300px] bg-white dark:bg-slate-900 shadow-2xl p-6 transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto hidden lg:hidden space-y-6">
+    <!-- Drawer Header -->
+    <div class="flex items-center justify-between pb-6 border-b border-slate-100 dark:border-slate-800">
+      <div class="flex items-center space-x-2">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 focus-ring" aria-label="Close Menu">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-2">
+      <!-- Home Dropdown -->
+      <div class="space-y-1">
+        <button class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium" onclick="toggleMobileDropdown('mobile-home-dropdown')">
+          <span>Home</span>
+          <i id="mobile-home-chevron" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+        </button>
+        <div id="mobile-home-dropdown" class="hidden pl-4 space-y-1">
+          <a href="index.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Home 1</a>
+          <a href="home-2.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Home 2</a>
+        </div>
+      </div>
+      
+      <a href="about.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">About</a>
+      <a href="courses.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Courses</a>
+      <a href="instructors.html" class="block px-3 py-2 rounded-lg text-primary bg-slate-50 dark:bg-slate-800 font-medium">Instructors</a>
+      <a href="blog.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Resources</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Contact</a>
+
+      <!-- Dashboard Dropdown -->
+      <div class="space-y-1">
+        <button class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium" onclick="toggleMobileDropdown('mobile-dashboard-dropdown')">
+          <span>Dashboard</span>
+          <i id="mobile-dashboard-chevron" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+        </button>
+        <div id="mobile-dashboard-dropdown" class="hidden pl-4 space-y-1">
+          <a href="user-dashboard.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Student Dashboard</a>
+          <a href="admin-dashboard.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Admin Dashboard</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Drawer Footer (Toggles & CTAs) -->
+    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+      <!-- Theme & RTL Toggles inside Mobile Menu -->
+      <div class="flex items-center justify-between gap-4">
+        <span class="text-sm font-medium text-slate-600 dark:text-slate-400">Settings</span>
+        <div class="flex items-center space-x-2">
+          <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle RTL">
+            RTL
+          </button>
+          <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+            <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Login & Register/Enroll CTA -->
+      <div class="flex flex-col space-y-2">
+        <a href="login.html" class="w-full text-center px-4 py-2 border border-primary text-primary font-medium rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-850 transition-colors focus-ring text-sm">Login</a>
+        <a href="enroll.html" class="w-full text-center px-4 py-2 bg-primary text-white font-medium rounded-xl">Enroll Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="page-transition">
+    <!-- Page Header (Breadcrumbs) -->
+    <section class="py-12 bg-slate-100 dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Our Teaching Faculty</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400">
+          <a href="index.html" class="hover:underline">Home</a> &middot; <span class="text-primary font-semibold">Instructors</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Instructors Grid -->
+    <section class="py-20 bg-white dark:bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center max-w-xl mx-auto">
+          <p class="text-slate-500 dark:text-slate-400 text-sm">
+            All tutors undergo certification checks and reference validation to guarantee maximum guidance quality.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Dr. John Doe -->
+          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-24 h-24 rounded-full bg-indigo-150 dark:bg-slate-800 mx-auto flex items-center justify-center text-primary text-2xl font-bold">
+              JD
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Dr. John Doe</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">MIT Computer Science Graduate</p>
+            </div>
+            <div class="flex justify-center space-x-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase rounded">Python</span>
+              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950 text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase rounded">Web Dev</span>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>1,420 Active Students</span>
+            </div>
+          </div>
+
+          <!-- Maria Silva -->
+          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-24 h-24 rounded-full bg-teal-150 dark:bg-slate-800 mx-auto flex items-center justify-center text-secondary text-2xl font-bold">
+              MS
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Maria Silva</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Stanford Mathematics Faculty</p>
+            </div>
+            <div class="flex justify-center space-x-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950 text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase rounded">Calculus</span>
+              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase rounded">Algebra</span>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>980 Active Students</span>
+            </div>
+          </div>
+
+          <!-- Anna Garcia -->
+          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-24 h-24 rounded-full bg-indigo-150 dark:bg-slate-800 mx-auto flex items-center justify-center text-primary text-2xl font-bold">
+              AG
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Anna Garcia</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Spanish Language Expert</p>
+            </div>
+            <div class="flex justify-center space-x-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-pink-50 dark:bg-pink-950 text-[10px] text-pink-700 dark:text-pink-350 font-bold uppercase rounded">Spanish</span>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>650 Active Students</span>
+            </div>
+          </div>
+
+          <!-- Alex Patterson -->
+          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-24 h-24 rounded-full bg-teal-150 dark:bg-slate-800 mx-auto flex items-center justify-center text-secondary text-2xl font-bold">
+              AP
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Alex Patterson</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Physics Faculty Researcher</p>
+            </div>
+            <div class="flex justify-center space-x-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950 text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase rounded">Physics</span>
+              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase rounded">Mechanics</span>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>840 Active Students</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. Footer -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-850">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Info Column -->
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center space-x-2 text-white">
+          <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+          <span class="text-lg font-bold">EduAcademy</span>
+        </a>
+        <p class="text-sm text-slate-400">
+          Empowering learners worldwide through interactive mentoring platforms and structured course curriculums.
+        </p>
+              <div class="flex space-x-3 text-slate-400">
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Course Catalog</a></li>
+          <li><a href="instructors.html" class="hover:text-white transition-colors">Expert Instructors</a></li>
+          <li><a href="blog.html" class="hover:text-white transition-colors">Academy Resources</a></li>
+        </ul>
+      </div>
+
+      <!-- Course Categories -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Categories</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="courses.html" class="hover:text-white transition-colors">Mathematics</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Science & Tech</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Coding Languages</a></li>
+          <li><a href="courses.html" class="hover:text-white transition-colors">Beginner Spanish</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-4">
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider">Join Newsletter</h4>
+        <p class="text-xs text-slate-400">Subscribe for weekly exam guides and resource releases.</p>
+        <form class="flex border border-slate-800 rounded-lg overflow-hidden max-w-sm">
+          <input type="email" placeholder="Your email" class="flex-1 bg-slate-800 border-0 focus:ring-0 text-slate-200 px-3 py-2 text-xs outline-none">
+          <button type="submit" class="bg-primary hover:bg-primary-hover px-4 text-white text-xs font-semibold">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-4 sm:space-y-0">
+      <p>&copy; 2026 EduAcademy. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
