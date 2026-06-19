@@ -205,6 +205,20 @@ function initFaqAccordion() {
       const body = header.nextElementSibling;
       const icon = header.querySelector('.faq-icon');
       
+      // Close other open FAQ panels
+      faqHeaders.forEach(otherHeader => {
+        if (otherHeader !== header) {
+          const otherBody = otherHeader.nextElementSibling;
+          const otherIcon = otherHeader.querySelector('.faq-icon');
+          if (otherBody && !otherBody.classList.contains('hidden')) {
+            otherBody.classList.add('hidden');
+          }
+          if (otherIcon) {
+            otherIcon.classList.remove('rotate-180');
+          }
+        }
+      });
+      
       if (body) {
         body.classList.toggle('hidden');
         if (icon) {

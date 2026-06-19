@@ -47,7 +47,7 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body transition-colors duration-300">
   
   <!-- Header / Navbar -->
-  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-transparent">
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2">
@@ -157,7 +157,7 @@
         </button>
         <div id="mobile-dashboard-dropdown" class="hidden pl-4 space-y-1">
           <a href="user-dashboard.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Student Dashboard</a>
-          <a href="admin-dashboard.html" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Admin Dashboard</a>
+          <a href="admin-dashboard.html" class="block px-4 py-3 text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800 rounded-b-xl font-medium">Admin Dashboard</a>
         </div>
       </div>
     </nav>
@@ -188,90 +188,259 @@
 
   <!-- Main Content Area -->
   <main class="page-transition">
-    <!-- Page Header (Breadcrumbs) -->
-    <section class="py-12 bg-slate-100 dark:bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">About EduAcademy</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-400">
-          <a href="index.html" class="hover:underline">Home</a> &middot; <span class="text-primary font-semibold">About Us</span>
+    <!-- Hero Section (Clean slate, no background pattern) -->
+    <section class="relative py-20 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden">
+      <!-- Glow ambient light -->
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-primary/10 rounded-full blur-[90px] pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 z-10">
+        <!-- Small Badge -->
+        <div class="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-100 dark:border-indigo-900/60">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-[9px] font-bold text-primary dark:text-indigo-200 tracking-wider">SHAPING THE FUTURE</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.15] font-heading max-w-3xl mx-auto">
+          We're on a Mission to <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Simplify Learning.</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-650 dark:text-slate-350 max-w-2xl mx-auto leading-relaxed font-medium">
+          Providing candidates with direct access to accredited master teachers, smart tracking dashboards, and interactive learning tools.
         </p>
       </div>
     </section>
 
-    <!-- Story & Mission Section -->
-    <section class="py-12 bg-white dark:bg-slate-950">
+    <!-- Story & Mission Section (Alternative Background: White) -->
+    <section class="py-16 bg-white dark:bg-slate-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Graphics -->
+        <!-- Graphics with actual image -->
         <div class="relative flex justify-center">
-          <div class="w-80 h-80 sm:w-96 sm:h-96 rounded-3xl bg-gradient-to-tr from-primary/10 to-secondary/10 border border-slate-200 dark:border-slate-800 flex items-center justify-center p-8 relative overflow-hidden">
-            <i data-lucide="book-open" class="w-32 h-32 text-primary/30 animate-pulse"></i>
-            <div class="absolute bottom-6 left-6 p-4 bg-white/85 dark:bg-slate-900/85 backdrop-blur rounded-2xl shadow-xl border border-white/20">
-              <span class="text-xl font-black text-primary">10+ Years</span>
-              <p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold mt-0.5">Teaching Experience</p>
+          <div class="relative w-full max-w-md aspect-video sm:aspect-square rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl group">
+            <img src="../assets/images/hero-learning.png" alt="Students collaborating at EduAcademy" class="w-full h-full object-cover opacity-95 group-hover:scale-102 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 p-5 bg-white/90 dark:bg-slate-900/90 backdrop-blur rounded-2xl border border-slate-200/60 dark:border-slate-800/80 shadow-lg">
+              <span class="text-xl sm:text-2xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent block">10+ Years</span>
+              <p class="text-[9px] sm:text-[10px] text-slate-400 uppercase font-bold mt-0.5 tracking-wider">Teaching Excellence</p>
             </div>
           </div>
         </div>
 
         <!-- Copy -->
         <div class="space-y-6">
-          <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Our Teaching Story & Philosophy</h2>
-          <p class="text-slate-600 dark:text-slate-350 leading-relaxed text-sm">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Our Story</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white font-heading">Our Teaching Story & Philosophy</h2>
+          <p class="text-slate-650 dark:text-slate-350 leading-relaxed text-sm">
             EduAcademy commenced in 2016 as a small project with a core vision: giving high school and university candidates access to professional, dedicated mentors who could simplify complex concepts in math, tech, and languages.
           </p>
           <p class="text-slate-650 dark:text-slate-350 leading-relaxed text-sm">
-            Today, we are proud to support thousands of active members globally by combining modern digital tools (webboards, tracking charts, and skeleton dashboards) with handpicked teaching talent.
+            Today, we are proud to support thousands of active members globally by combining modern digital tools (webboards, tracking charts, and homework grading flows) with handpicked teaching talent.
           </p>
-          <div class="grid grid-cols-2 gap-6 pt-4">
+          <div class="grid grid-cols-2 gap-6 pt-4 border-t border-slate-100 dark:border-slate-900">
             <div class="space-y-1">
-              <h4 class="font-bold text-slate-900 dark:text-white text-base">Expert Mentors</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Instructors pass rigorous background and competence reviews.</p>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide">Expert Mentors</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-455 leading-relaxed">Instructors pass rigorous background and competence reviews.</p>
             </div>
             <div class="space-y-1">
-              <h4 class="font-bold text-slate-900 dark:text-white text-base">Modern Dashboard</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Keep track of your course metrics and homework grades seamlessly.</p>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide">Modern Dashboard</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-455 leading-relaxed">Keep track of your course metrics and homework grades seamlessly.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Core Values Section -->
-    <section class="py-12 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+    <!-- Leadership Faculty Team Section (Alternative Background: Slate-50) -->
+    <section class="py-16 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Faculty Team</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white font-heading">Meet Our Academic Leaders</h2>
+          <p class="text-slate-650 dark:text-slate-350 text-sm">Our courses are hosted by verified, accredited subject matter specialists.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Leader 1 -->
+          <div class="relative bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 text-center space-y-4 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-800 shadow-md mx-auto relative mt-2">
+              <img src="../assets/images/instructor-david.png" alt="Dr. John Doe" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-0.5">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Dr. John Doe</h3>
+              <p class="text-[10px] font-semibold text-primary">Ph.D. in Computer Science (MIT)</p>
+            </div>
+            <div class="flex justify-center space-x-1.5">
+              <span class="px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950/60 rounded text-[9px] text-indigo-750 dark:text-indigo-200 font-bold uppercase">Physics</span>
+              <span class="px-2 py-0.5 bg-teal-50 dark:bg-teal-950/60 rounded text-[9px] text-teal-750 dark:text-teal-200 font-bold uppercase">Web Dev</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 px-2 line-clamp-2">
+              Coordinating curriculum guidelines and peer coding modules over the past 12 years.
+            </p>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <a href="#" class="btn-secondary py-1.5 text-center text-xs font-bold flex items-center justify-center gap-1 rounded-lg">
+                <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                <span>Message</span>
+              </a>
+              <a href="instructors.html" class="btn-primary py-1.5 text-center text-xs font-bold flex items-center justify-center gap-1 rounded-lg">
+                <i data-lucide="user" class="w-3.5 h-3.5"></i>
+                <span>Profile</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Leader 2 -->
+          <div class="relative bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 text-center space-y-4 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-800 shadow-md mx-auto relative mt-2">
+              <img src="../assets/images/instructor-maria.png" alt="Dr. Maria Silva" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-0.5">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Dr. Maria Silva</h3>
+              <p class="text-[10px] font-semibold text-secondary">Ph.D. in Pure Mathematics (Stanford)</p>
+            </div>
+            <div class="flex justify-center space-x-1.5">
+              <span class="px-2 py-0.5 bg-teal-50 dark:bg-teal-950/60 rounded text-[9px] text-teal-750 dark:text-teal-200 font-bold uppercase">Calculus</span>
+              <span class="px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950/60 rounded text-[9px] text-indigo-750 dark:text-indigo-200 font-bold uppercase">Algebra</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 px-2 line-clamp-2">
+              Passionate about resolving complex equations and tutoring high school pre-calculus students.
+            </p>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <a href="#" class="btn-secondary py-1.5 text-center text-xs font-bold flex items-center justify-center gap-1 rounded-lg">
+                <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                <span>Message</span>
+              </a>
+              <a href="instructors.html" class="btn-primary py-1.5 text-center text-xs font-bold flex items-center justify-center gap-1 rounded-lg">
+                <i data-lucide="user" class="w-3.5 h-3.5"></i>
+                <span>Profile</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Leader 3 -->
+          <div class="relative bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 text-center space-y-4 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-800 shadow-md mx-auto relative mt-2">
+              <img src="../assets/images/instructor-anna.png" alt="Anna Garcia" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-0.5">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Anna Garcia</h3>
+              <p class="text-[10px] font-semibold text-pink-600">M.A. in Linguistics (Barcelona)</p>
+            </div>
+            <div class="flex justify-center space-x-1.5">
+              <span class="px-2 py-0.5 bg-pink-50 dark:bg-pink-950/60 rounded text-[9px] text-pink-700 dark:text-pink-200 font-bold uppercase">Spanish</span>
+              <span class="px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950/60 rounded text-[9px] text-indigo-750 dark:text-indigo-200 font-bold uppercase">French</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 px-2 line-clamp-2">
+              Specialized in oral accent prep, conversational loops, and multilingual vocabulary guides.
+            </p>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <a href="#" class="btn-secondary py-1.5 text-center text-xs font-bold flex items-center justify-center gap-1 rounded-lg">
+                <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                <span>Message</span>
+              </a>
+              <a href="instructors.html" class="btn-primary py-1.5 text-center text-xs font-bold flex items-center justify-center gap-1 rounded-lg">
+                <i data-lucide="user" class="w-3.5 h-3.5"></i>
+                <span>Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section (Alternative Background: White) -->
+    <section class="py-16 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Our Core Values</h2>
-          <p class="text-slate-600 dark:text-slate-400">These three pillars dictate our platform decisions and instruction goals.</p>
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Pillars</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white font-heading">Our Core Values</h2>
+          <p class="text-slate-655 dark:text-slate-350 text-sm">These three pillars dictate our platform decisions and instruction goals.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="p-8 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl text-center space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-primary flex items-center justify-center mx-auto">
+          <!-- Value 1 -->
+          <div class="relative group p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl text-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-350 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-indigo-400"></div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950/40 text-primary flex items-center justify-center mx-auto">
               <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-lg text-slate-900 dark:text-white">Academic Integrity</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
               No shortcuts. We focus on structured logic explanations and practice worksheets to secure long-term subject understanding.
             </p>
           </div>
 
-          <div class="p-8 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl text-center space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/40 text-secondary flex items-center justify-center mx-auto">
+          <!-- Value 2 -->
+          <div class="relative group p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl text-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-350 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-teal-400"></div>
+            <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-950/40 text-secondary flex items-center justify-center mx-auto">
               <i data-lucide="users" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-lg text-slate-900 dark:text-white">Student First Focus</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
               We gather monthly feedback and use learning analytics reports to adapt live classes to the student pace.
             </p>
           </div>
 
-          <div class="p-8 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl text-center space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-primary flex items-center justify-center mx-auto">
+          <!-- Value 3 -->
+          <div class="relative group p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl text-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-350 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-400"></div>
+            <div class="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-950/40 text-pink-500 flex items-center justify-center mx-auto">
               <i data-lucide="lightbulb" class="w-6 h-6"></i>
             </div>
             <h3 class="font-bold text-lg text-slate-900 dark:text-white">Continuous Innovation</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
               Regularly updating interactive modules, code explorers, and homework grading flows to align with modern standards.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Clean CTA Banner (Split Column Design) -->
+    <section class="py-16 bg-slate-900 dark:bg-slate-950 border-t border-slate-800 relative overflow-hidden">
+      <!-- Glow ambient lights inside CTA -->
+      <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-slate-950/85 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-800 rounded-[2rem] p-8 md:p-12 shadow-2xl grid md:grid-cols-12 gap-8 items-center">
+          <!-- Copy Column -->
+          <div class="md:col-span-7 space-y-6 text-left">
+            <div class="inline-flex items-center space-x-2 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              <span class="text-[9px] font-bold text-indigo-200 uppercase tracking-widest">START YOUR JOURNEY</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white font-heading leading-tight">
+              Ready to Accelerate Your Potential?
+            </h2>
+            <p class="text-slate-455 text-sm leading-relaxed max-w-xl">
+              Join thousands of candidates worldwide who rely on EduAcademy's structured curriculums and designated expert faculty to achieve their learning targets.
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-xs text-slate-350 font-medium">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-secondary"></i>
+                <span>60+ Expert Modules</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-secondary"></i>
+                <span>1-on-1 Grading Sync</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Actions Column -->
+          <div class="md:col-span-5 flex flex-col justify-center sm:items-stretch lg:items-end">
+            <div class="bg-slate-900/60 dark:bg-slate-950/30 border border-slate-800 p-6 rounded-2xl space-y-4 w-full max-w-sm ml-auto">
+              <h4 class="text-white font-bold text-sm">Become a Member Today</h4>
+              <p class="text-slate-450 text-[11px]">Get full access to live whiteboards, weak topic metrics, and mock assessments.</p>
+              <div class="flex flex-col gap-2.5 pt-2">
+                <a href="signup.html" class="btn-primary py-2.5 text-center text-xs font-bold rounded-lg shadow-md flex items-center justify-center gap-1.5 group">
+                  <span>Enroll Now</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+                <a href="contact.html" class="btn-secondary py-2.5 text-center text-xs font-bold rounded-lg bg-transparent border border-slate-700 hover:border-slate-500 text-white flex items-center justify-center">
+                  Talk to an Advisor
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
