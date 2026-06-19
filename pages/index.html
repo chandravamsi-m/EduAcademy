@@ -100,8 +100,8 @@
           <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
         </button>
 
-        <a href="login.html" class="px-4 py-2 border border-primary text-primary font-medium rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-850 transition-colors focus-ring text-sm">Login</a>
-        <a href="enroll.html" class="px-5 py-2 bg-primary hover:bg-primary-hover text-white font-medium rounded-xl transition-all shadow-md shadow-indigo-500/20 focus-ring">Enroll Now</a>
+        <a href="login.html" class="btn-secondary text-sm">Login</a>
+        <a href="enroll.html" class="btn-primary">Enroll Now</a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -180,8 +180,8 @@
 
       <!-- Login & Register/Enroll CTA -->
       <div class="flex flex-col space-y-2">
-        <a href="login.html" class="w-full text-center px-4 py-2 border border-primary text-primary font-medium rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-850 transition-colors focus-ring text-sm">Login</a>
-        <a href="enroll.html" class="w-full text-center px-4 py-2 bg-primary text-white font-medium rounded-xl">Enroll Now</a>
+        <a href="login.html" class="btn-secondary w-full text-center text-sm">Login</a>
+        <a href="enroll.html" class="btn-primary w-full text-center">Enroll Now</a>
       </div>
     </div>
   </div>
@@ -190,7 +190,7 @@
   <main class="page-transition">
     
     <!-- 1. Hero Section -->
-    <section class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-br from-indigo-50/50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950/20">
+    <section class="relative overflow-hidden py-12 lg:py-20 bg-gradient-to-br from-indigo-50/50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950/20">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-200/20 via-transparent to-transparent dark:from-indigo-900/10 pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <!-- Hero Text -->
@@ -221,11 +221,11 @@
 
           <!-- CTAs -->
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="courses.html" class="px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 transition-all flex items-center space-x-2">
+            <a href="courses.html" class="btn-primary flex items-center gap-2">
               <span>Start Learning</span>
               <i data-lucide="arrow-right" class="w-4 h-4 rtl-flip"></i>
             </a>
-            <a href="about.html" class="px-6 py-3 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold rounded-xl transition-colors">
+            <a href="about.html" class="btn-secondary">
               About Academy
             </a>
           </div>
@@ -233,9 +233,11 @@
 
         <!-- Hero Graphic -->
         <div class="relative flex justify-center">
-          <div class="w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] rounded-3xl overflow-hidden bg-gradient-to-tr from-primary/20 to-secondary/20 shadow-2xl relative flex items-center justify-center">
+          <div class="w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl relative">
+            <img src="../assets/images/hero-learning.png" alt="Online Learning Illustration" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
             <!-- Glassmorphism Card Info -->
-            <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/70 dark:bg-slate-900/75 backdrop-blur-md border border-white/20 dark:border-slate-800 rounded-2xl shadow-xl flex items-center space-x-4">
+            <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/70 dark:bg-slate-900/75 backdrop-blur-md border border-white/20 dark:border-slate-800 rounded-2xl shadow-xl flex items-center space-x-4 z-10">
               <div class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-white">
                 <i data-lucide="users" class="w-6 h-6"></i>
               </div>
@@ -243,11 +245,6 @@
                 <p class="text-sm font-bold text-slate-900 dark:text-white">Active Learners</p>
                 <p class="text-xs text-slate-600 dark:text-slate-300">Over 15,000+ Students enrolled this week</p>
               </div>
-            </div>
-            
-            <!-- Icon/Visual Element -->
-            <div class="w-48 h-48 bg-white/10 rounded-full flex items-center justify-center border border-white/20 animate-pulse">
-              <i data-lucide="graduation-cap" class="w-24 h-24 text-primary"></i>
             </div>
           </div>
         </div>
@@ -277,9 +274,10 @@
     </section>
 
     <!-- 3. Featured Categories -->
-    <section class="py-20 bg-white dark:bg-slate-900">
+    <section class="py-12 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Categories</span>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Browse Course Categories</h2>
           <p class="text-slate-600 dark:text-slate-400">Discover customized training programs across high-demand domains taught by industry professionals.</p>
         </div>
@@ -322,10 +320,11 @@
     </section>
 
     <!-- 4. Featured Courses -->
-    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
+    <section class="py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16">
-          <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-primary uppercase tracking-wider block">Our Courses</span>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Our Featured Courses</h2>
             <p class="text-slate-600 dark:text-slate-400 max-w-xl">Interactive curriculum paired with practice assignments and weekly mentor sessions.</p>
           </div>
@@ -339,9 +338,8 @@
           <!-- Course Card 1 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-md hover:shadow-xl transition-all group flex flex-col h-full">
             <div class="relative h-48 bg-indigo-100 dark:bg-slate-800 overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 flex items-center justify-center">
-                <i data-lucide="code" class="w-16 h-16 text-primary/40 group-hover:scale-110 transition-transform"></i>
-              </div>
+              <img src="../assets/images/course-webdev.png" alt="Web Development Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-slate-950/20"></div>
               <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Development</span>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
@@ -374,9 +372,8 @@
           <!-- Course Card 2 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-md hover:shadow-xl transition-all group flex flex-col h-full">
             <div class="relative h-48 bg-teal-100 dark:bg-slate-800 overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-tr from-secondary/10 to-primary/10 flex items-center justify-center">
-                <i data-lucide="binary" class="w-16 h-16 text-secondary/40 group-hover:scale-110 transition-transform"></i>
-              </div>
+              <img src="../assets/images/course-calculus.png" alt="Calculus Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-slate-950/20"></div>
               <span class="absolute top-4 left-4 bg-teal-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Mathematics</span>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
@@ -409,9 +406,8 @@
           <!-- Course Card 3 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-md hover:shadow-xl transition-all group flex flex-col h-full">
             <div class="relative h-48 bg-pink-100 dark:bg-slate-800 overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/10 to-indigo-500/10 flex items-center justify-center">
-                <i data-lucide="languages" class="w-16 h-16 text-pink-500/30 group-hover:scale-110 transition-transform"></i>
-              </div>
+              <img src="../assets/images/course-spanish.png" alt="Spanish Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-slate-950/20"></div>
               <span class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Languages</span>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
@@ -445,9 +441,10 @@
     </section>
 
     <!-- 5. How It Works -->
-    <section class="py-20 bg-white dark:bg-slate-900">
+    <section class="py-12 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Our Process</span>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">How EduAcademy Works</h2>
           <p class="text-slate-600 dark:text-slate-400">Begin your learning adventure in three straightforward phases.</p>
         </div>
@@ -490,10 +487,11 @@
     </section>
 
     <!-- 6. Top Instructors -->
-    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
+    <section class="py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16">
-          <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-primary uppercase tracking-wider block">Instructors</span>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Meet Our Top Tutors</h2>
             <p class="text-slate-600 dark:text-slate-400 max-w-xl">Learn from subject experts and professors selected from leading global academic institutions.</p>
           </div>
@@ -506,8 +504,8 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Tutor Card 1 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full bg-indigo-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-primary text-2xl font-bold">
-              JD
+            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-indigo-500/20">
+              <img src="../assets/images/instructor-david.png" alt="Dr. John Doe" class="w-full h-full object-cover">
             </div>
             <div>
               <h3 class="font-bold text-slate-900 dark:text-white text-lg">Dr. John Doe</h3>
@@ -521,8 +519,8 @@
 
           <!-- Tutor Card 2 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full bg-teal-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-secondary text-2xl font-bold">
-              MS
+            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-teal-500/20">
+              <img src="../assets/images/instructor-maria.png" alt="Maria Silva" class="w-full h-full object-cover">
             </div>
             <div>
               <h3 class="font-bold text-slate-900 dark:text-white text-lg">Maria Silva</h3>
@@ -536,8 +534,8 @@
 
           <!-- Tutor Card 3 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full bg-indigo-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-primary text-2xl font-bold">
-              AG
+            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-indigo-500/20">
+              <img src="../assets/images/instructor-anna.png" alt="Anna Garcia" class="w-full h-full object-cover">
             </div>
             <div>
               <h3 class="font-bold text-slate-900 dark:text-white text-lg">Anna Garcia</h3>
@@ -551,8 +549,8 @@
 
           <!-- Tutor Card 4 -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full bg-teal-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-secondary text-2xl font-bold">
-              AP
+            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-teal-500/20">
+              <img src="../assets/images/instructor-alex.png" alt="Alex Patterson" class="w-full h-full object-cover">
             </div>
             <div>
               <h3 class="font-bold text-slate-900 dark:text-white text-lg">Alex Patterson</h3>
@@ -568,7 +566,7 @@
     </section>
 
     <!-- 7. Live Sessions Promo -->
-    <section class="py-20 bg-white dark:bg-slate-900">
+    <section class="py-12 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
           <span class="inline-flex items-center space-x-1.5 px-3 py-1 bg-red-100 text-red-800 dark:bg-red-950/60 dark:text-red-200 rounded-full text-xs font-semibold">
@@ -593,37 +591,43 @@
               <span>Session recording library for backup revision</span>
             </li>
           </ul>
-          <a href="login.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-xl transition-all shadow-md shadow-indigo-500/10">
+          <a href="login.html" class="btn-primary flex items-center gap-2">
             <span>Join Dashboard to Participate</span>
             <i data-lucide="arrow-right" class="w-4 h-4 rtl-flip"></i>
           </a>
         </div>
-        <div class="relative bg-slate-100 dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-xl overflow-hidden flex flex-col justify-between aspect-video">
-          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
-            <span class="text-xs font-semibold text-slate-600 dark:text-slate-300 flex items-center space-x-1">
-              <i data-lucide="video" class="w-3.5 h-3.5 text-red-500"></i>
-              <span>MATH-201 Live Session</span>
-            </span>
-            <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-[10px] text-slate-600 dark:text-slate-300">12:30 Remaining</span>
-          </div>
-          <!-- Placeholder video UI -->
-          <div class="flex-1 flex items-center justify-center py-6">
-            <div class="w-16 h-16 rounded-full bg-white/20 hover:bg-white/40 dark:bg-slate-900/40 dark:hover:bg-slate-900/60 backdrop-blur-md flex items-center justify-center cursor-pointer border border-white/35 transition-transform hover:scale-110">
-              <i data-lucide="play" class="w-8 h-8 text-white fill-white"></i>
+        <div class="relative bg-slate-100 dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-xl aspect-video group">
+          <img src="../assets/images/live-session-bg.png" alt="Live Session Whiteboard Mock" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/50 transition-colors"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-6">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-white flex items-center space-x-1 bg-slate-900/50 backdrop-blur px-2.5 py-1 rounded-lg">
+                <i data-lucide="video" class="w-3.5 h-3.5 text-red-500"></i>
+                <span>MATH-201 Live Session</span>
+              </span>
+              <span class="px-2 py-0.5 rounded bg-slate-900/50 backdrop-blur text-[10px] text-white">12:30 Remaining</span>
             </div>
-          </div>
-          <div class="flex items-center space-x-3 mt-3 border-t border-slate-200 dark:border-slate-700 pt-3">
-            <div class="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-[10px] text-white">L</div>
-            <span class="text-xs text-slate-600 dark:text-slate-300 font-medium">Tutor: Larry Page</span>
+            <div class="flex items-center justify-center">
+              <div class="w-16 h-16 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center cursor-pointer border border-white/35 transition-transform hover:scale-110">
+                <i data-lucide="play" class="w-8 h-8 text-white fill-white"></i>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-full overflow-hidden border border-white/20">
+                <img src="../assets/images/instructor-alex.png" alt="Alex Patterson" class="w-full h-full object-cover">
+              </div>
+              <span class="text-xs text-white font-medium">Tutor: Alex Patterson</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 8. Testimonials -->
-    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
+    <section class="py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Testimonials</span>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Loved by Thousands of Learners</h2>
           <p class="text-slate-600 dark:text-slate-400">Discover stories from students who achieved academic growth using our platform.</p>
         </div>
@@ -702,9 +706,10 @@
     </section>
 
     <!-- 9. Pricing Preview -->
-    <section class="py-20 bg-white dark:bg-slate-900">
+    <section class="py-12 bg-white dark:bg-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider block">Membership Plans</span>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Choose Your Plan</h2>
           <p class="text-slate-600 dark:text-slate-400">Affordable membership structures designed for students and professional teams.</p>
         </div>
@@ -724,7 +729,7 @@
               </ul>
             </div>
             <!-- Secondary Button per guidelines -->
-            <a href="enroll.html" class="w-full text-center px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition-colors">Start Free Trial</a>
+            <a href="enroll.html" class="btn-secondary w-full text-center">Start Free Trial</a>
           </div>
 
           <!-- Pro Plan (Recommended - Primary Style) -->
@@ -742,7 +747,7 @@
               </ul>
             </div>
             <!-- Primary Button per guidelines -->
-            <a href="enroll.html" class="w-full text-center px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-hover text-white font-semibold transition-colors shadow-md shadow-indigo-500/20">Upgrade to Pro</a>
+            <a href="enroll.html" class="btn-primary w-full text-center">Upgrade to Pro</a>
           </div>
 
           <!-- Premium Plan -->
@@ -759,17 +764,18 @@
               </ul>
             </div>
             <!-- Secondary Button per guidelines -->
-            <a href="enroll.html" class="w-full text-center px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition-colors">Go Premium</a>
+            <a href="enroll.html" class="btn-secondary w-full text-center">Go Premium</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 10. Blog Preview -->
-    <section class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
+    <section class="py-12 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16">
-          <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-primary uppercase tracking-wider block">Resources & News</span>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Latest from Our Blog</h2>
             <p class="text-slate-600 dark:text-slate-400 max-w-xl">Study hacks, academy newsletters, exam prep guidelines, and topic highlights.</p>
           </div>
@@ -782,8 +788,9 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Post 1 -->
           <article class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-            <div class="h-44 bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
-              <i data-lucide="sparkles" class="w-12 h-12 text-primary/30"></i>
+            <div class="h-44 overflow-hidden relative">
+              <img src="../assets/images/blog-concentration.png" alt="Study Hacks" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-slate-950/10"></div>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
               <div class="space-y-2">
@@ -803,8 +810,9 @@
 
           <!-- Post 2 -->
           <article class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-            <div class="h-44 bg-teal-50 dark:bg-slate-800 flex items-center justify-center">
-              <i data-lucide="book-open" class="w-12 h-12 text-secondary/30"></i>
+            <div class="h-44 overflow-hidden relative">
+              <img src="../assets/images/blog-calculus.png" alt="Calculus Exam Prep" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-slate-950/10"></div>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
               <div class="space-y-2">
@@ -824,8 +832,9 @@
 
           <!-- Post 3 -->
           <article class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-            <div class="h-44 bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
-              <i data-lucide="code" class="w-12 h-12 text-primary/30"></i>
+            <div class="h-44 overflow-hidden relative">
+              <img src="../assets/images/blog-htmlcss.png" alt="HTML/CSS Coding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-slate-950/10"></div>
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between">
               <div class="space-y-2">
@@ -847,7 +856,7 @@
     </section>
 
     <!-- 11. CTA Banner -->
-    <section class="py-20 bg-gradient-to-tr from-primary to-indigo-900 text-white relative overflow-hidden">
+    <section class="py-12 bg-gradient-to-tr from-primary to-indigo-900 text-white relative overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/35 via-transparent to-transparent pointer-events-none"></div>
       <div class="max-w-4xl mx-auto px-4 text-center space-y-6 relative z-10">
         <h2 class="text-3xl sm:text-4xl font-extrabold">Ready to Boost Your Academic Record?</h2>
@@ -856,7 +865,7 @@
         </p>
         <div class="pt-4 flex flex-wrap justify-center gap-4">
           <a href="enroll.html" class="px-6 py-3 bg-white text-primary font-bold rounded-xl shadow-lg hover:bg-slate-100 transition-colors">Start Learning Today</a>
-          <a href="contact.html" class="px-6 py-3 bg-indigo-700/60 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors border border-indigo-500/30">Talk to Advisor</a>
+          <a href="contact.html" class="px-6 py-3 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-xl transition-all">Talk to Advisor</a>
         </div>
       </div>
     </section>

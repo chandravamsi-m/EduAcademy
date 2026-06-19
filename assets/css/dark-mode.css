@@ -41,22 +41,26 @@
 
 /* Fix background elements that might remain light in dark mode */
 .dark .bg-slate-50,
-.dark [data-theme="dark"] .bg-slate-50 {
-  background-color: #1e293b !important; /* slate-800 */
+.dark [data-theme="dark"] .bg-slate-50,
+.dark .bg-slate-950,
+.dark [data-theme="dark"] .bg-slate-950 {
+  background-color: #030712 !important; /* Premium deepest black */
 }
 
 .dark .bg-slate-100,
 .dark [data-theme="dark"] .bg-slate-100 {
-  background-color: #1e293b !important; /* slate-800 */
+  background-color: #030712 !important;
 }
 
 .dark .bg-white,
-.dark [data-theme="dark"] .bg-white {
-  background-color: #0f172a !important; /* slate-900 */
+.dark [data-theme="dark"] .bg-white,
+.dark .bg-slate-900,
+.dark [data-theme="dark"] .bg-slate-900 {
+  background-color: #090f1d !important; /* Premium dark navy-blue */
 }
 
 .dark .border-slate-200,
 .dark .border-slate-300,
 .dark [data-theme="dark"] .border-slate-200 {
-  border-color: #334155 !important; /* slate-700 */
+  border-color: #1e293b !important; /* slate-800 */
 }

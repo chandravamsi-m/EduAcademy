@@ -22,6 +22,58 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
+/* CTA Buttons Styling */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-primary);
+  color: #ffffff !important;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary) !important;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: #f5f3ff; /* Indigo-50 */
+  color: var(--color-primary) !important;
+  transform: translateY(-1px);
+}
+
+.dark .btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+}
+.dark .btn-secondary:hover {
+  background-color: #1e293b; /* Slate-800 */
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+}
+
 /* Custom micro-interactions & outline styling */
 .focus-ring:focus-visible {
   outline: 2px solid var(--color-primary);
