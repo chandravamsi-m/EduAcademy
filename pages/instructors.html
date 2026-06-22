@@ -186,101 +186,299 @@
     </div>
   </div>
 
-  <!-- Main Content Area -->
-  <main class="page-transition">
-    <!-- Page Header (Breadcrumbs) -->
-    <section class="py-12 bg-slate-100 dark:bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Our Teaching Faculty</h1>
-        <p class="text-sm text-slate-500 dark:text-slate-400">
-          <a href="index.html" class="hover:underline">Home</a> &middot; <span class="text-primary font-semibold">Instructors</span>
+  <!-- Main Content Area -->  <main class="page-transition animate-fadeIn">
+    <!-- Premium Header Section (Adaptive Light/Dark Background) -->
+    <section class="relative py-20 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden">
+      <!-- Glow ambient light -->
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-primary/10 rounded-full blur-[90px] pointer-events-none"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center space-y-4">
+        <!-- Small Badge -->
+        <div class="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-100 dark:border-indigo-900/60">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-[9px] font-bold text-primary dark:text-indigo-200 tracking-wider uppercase">Instructors</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.15] font-heading max-w-3xl mx-auto">
+          Our Teaching <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Faculty & Experts.</span>
+        </h1>
+        
+        <p class="text-sm sm:text-base text-slate-650 dark:text-slate-350 max-w-2xl mx-auto leading-relaxed font-medium">
+          Learn from world-class researchers, published authors, and experienced industry veterans dedicated to your growth.
         </p>
       </div>
     </section>
 
     <!-- Instructors Grid -->
-    <section class="py-12 bg-white dark:bg-slate-950">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div class="text-center max-w-xl mx-auto">
-          <p class="text-slate-500 dark:text-slate-400 text-sm">
-            All tutors undergo certification checks and reference validation to guarantee maximum guidance quality.
+    <section class="py-16 bg-white dark:bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <span class="text-xs font-bold text-primary dark:text-indigo-400 uppercase tracking-wider block">Faculty Directory</span>
+          <h2 class="text-3xl font-extrabold font-heading text-slate-900 dark:text-white">Meet the Academy Experts</h2>
+          <p class="text-slate-550 dark:text-slate-400 text-sm">
+            All tutors undergo strict background credentials verification, reference checks, and teaching certifications to ensure quality mentorship.
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Dr. John Doe -->
-          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-primary/20">
-              <img src="../assets/images/instructor-david.png" alt="Dr. John Doe" class="w-full h-full object-cover">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Dr. David Miller -->
+          <div class="group bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-lg hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-24 h-24 rounded-full overflow-hidden mx-auto border-2 border-indigo-500/20 group-hover:border-indigo-500 transition-colors">
+              <img src="../assets/images/instructor-david.png" alt="Dr. David Miller" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Dr. John Doe</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400">MIT Computer Science Graduate</p>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Dr. David Miller</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-450 font-medium">MIT Computer Science Graduate</p>
             </div>
-            <div class="flex justify-center space-x-1.5 pt-1">
-              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase rounded">Python</span>
-              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950 text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase rounded">Web Dev</span>
+            <div class="flex justify-center flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950/30 text-[10px] text-indigo-755 dark:text-indigo-300 font-bold uppercase rounded-md border border-indigo-100 dark:border-indigo-950/50">Python</span>
+              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950/30 text-[10px] text-teal-755 dark:text-teal-300 font-bold uppercase rounded-md border border-teal-100 dark:border-teal-950/50">Web Dev</span>
             </div>
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              <span>1,420 Active Students</span>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-2">
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4 text-indigo-500"></i> Students</span>
+                <span class="font-semibold text-slate-900 dark:text-white">12.4k</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="star" class="w-4 h-4 text-amber-500 fill-current"></i> Rating</span>
+                <span class="font-semibold text-slate-900 dark:text-white">4.9/5</span>
+              </div>
+            </div>
+            <div class="pt-2">
+              <a href="courses.html" class="btn-secondary w-full text-xs gap-1.5 py-2">
+                View Courses <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
             </div>
           </div>
 
           <!-- Maria Silva -->
-          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-secondary/20">
-              <img src="../assets/images/instructor-maria.png" alt="Maria Silva" class="w-full h-full object-cover">
+          <div class="group bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-lg hover:border-teal-500/30 dark:hover:border-teal-500/30 transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-24 h-24 rounded-full overflow-hidden mx-auto border-2 border-teal-500/20 group-hover:border-teal-500 transition-colors">
+              <img src="../assets/images/instructor-maria.png" alt="Maria Silva" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Maria Silva</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Stanford Mathematics Faculty</p>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">Dr. Maria Silva</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-455 font-medium">Stanford Mathematics Faculty</p>
             </div>
-            <div class="flex justify-center space-x-1.5 pt-1">
-              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950 text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase rounded">Calculus</span>
-              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase rounded">Algebra</span>
+            <div class="flex justify-center flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950/30 text-[10px] text-teal-755 dark:text-teal-300 font-bold uppercase rounded-md border border-teal-100 dark:border-teal-950/50">Calculus</span>
+              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950/30 text-[10px] text-indigo-755 dark:text-indigo-300 font-bold uppercase rounded-md border border-indigo-100 dark:border-indigo-950/50">Algebra</span>
             </div>
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              <span>980 Active Students</span>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-2">
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4 text-teal-555"></i> Students</span>
+                <span class="font-semibold text-slate-900 dark:text-white">9.8k</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="star" class="w-4 h-4 text-amber-500 fill-current"></i> Rating</span>
+                <span class="font-semibold text-slate-900 dark:text-white">4.8/5</span>
+              </div>
+            </div>
+            <div class="pt-2">
+              <a href="courses.html" class="btn-secondary w-full text-xs gap-1.5 py-2">
+                View Courses <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
             </div>
           </div>
 
           <!-- Anna Garcia -->
-          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-indigo-500/20">
-              <img src="../assets/images/instructor-anna.png" alt="Anna Garcia" class="w-full h-full object-cover">
+          <div class="group bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-lg hover:border-pink-500/30 dark:hover:border-pink-500/30 transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-24 h-24 rounded-full overflow-hidden mx-auto border-2 border-pink-500/20 group-hover:border-pink-500 transition-colors">
+              <img src="../assets/images/instructor-anna.png" alt="Anna Garcia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Anna Garcia</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Spanish Language Expert</p>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">Dr. Anna Garcia</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-455 font-medium">Spanish Language Expert</p>
             </div>
-            <div class="flex justify-center space-x-1.5 pt-1">
-              <span class="px-2.5 py-0.5 bg-pink-50 dark:bg-pink-950 text-[10px] text-pink-700 dark:text-pink-350 font-bold uppercase rounded">Spanish</span>
+            <div class="flex justify-center flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-pink-50 dark:bg-pink-950/30 text-[10px] text-pink-755 dark:text-pink-300 font-bold uppercase rounded-md border border-pink-100 dark:border-pink-950/50">Spanish</span>
             </div>
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              <span>650 Active Students</span>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-2">
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4 text-pink-500"></i> Students</span>
+                <span class="font-semibold text-slate-900 dark:text-white">6.5k</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="star" class="w-4 h-4 text-amber-500 fill-current"></i> Rating</span>
+                <span class="font-semibold text-slate-900 dark:text-white">4.9/5</span>
+              </div>
+            </div>
+            <div class="pt-2">
+              <a href="courses.html" class="btn-secondary w-full text-xs gap-1.5 py-2">
+                View Courses <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
             </div>
           </div>
 
           <!-- Alex Patterson -->
-          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-24 h-24 rounded-full overflow-hidden mx-auto flex items-center justify-center border-2 border-teal-500/20">
-              <img src="../assets/images/instructor-alex.png" alt="Alex Patterson" class="w-full h-full object-cover">
+          <div class="group bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 text-center space-y-4 shadow-sm hover:shadow-lg hover:border-teal-500/30 dark:hover:border-teal-500/30 transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-24 h-24 rounded-full overflow-hidden mx-auto border-2 border-teal-500/20 group-hover:border-teal-500 transition-colors">
+              <img src="../assets/images/instructor-alex.png" alt="Alex Patterson" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Alex Patterson</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Physics Faculty Researcher</p>
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">Dr. Alex Patterson</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-455 font-medium">Physics Faculty Researcher</p>
             </div>
-            <div class="flex justify-center space-x-1.5 pt-1">
-              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950 text-[10px] text-teal-700 dark:text-teal-350 font-bold uppercase rounded">Physics</span>
-              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-[10px] text-indigo-700 dark:text-indigo-350 font-bold uppercase rounded">Mechanics</span>
+            <div class="flex justify-center flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-0.5 bg-teal-50 dark:bg-teal-950/30 text-[10px] text-teal-755 dark:text-teal-300 font-bold uppercase rounded-md border border-teal-100 dark:border-teal-950/50">Physics</span>
+              <span class="px-2.5 py-0.5 bg-indigo-50 dark:bg-indigo-950/30 text-[10px] text-indigo-755 dark:text-indigo-300 font-bold uppercase rounded-md border border-indigo-100 dark:border-indigo-950/50">Mechanics</span>
             </div>
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center space-x-2">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              <span>840 Active Students</span>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-2">
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4 text-teal-555"></i> Students</span>
+                <span class="font-semibold text-slate-900 dark:text-white">8.4k</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="star" class="w-4 h-4 text-amber-500 fill-current"></i> Rating</span>
+                <span class="font-semibold text-slate-900 dark:text-white">4.7/5</span>
+              </div>
             </div>
+            <div class="pt-2">
+              <a href="courses.html" class="btn-secondary w-full text-xs gap-1.5 py-2">
+                View Courses <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Our Instructors Section -->
+    <section class="py-16 bg-slate-50 dark:bg-slate-900/40 border-t border-b border-slate-200 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <span class="text-xs font-bold text-primary dark:text-indigo-400 uppercase tracking-wider block">Our Standards</span>
+          <h2 class="text-3xl font-extrabold font-heading text-slate-900 dark:text-white">A Higher Standard of Education</h2>
+          <p class="text-slate-550 dark:text-slate-450 text-sm">
+            We believe that premium education is built on the shoulders of premium educators.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">Rigorous Credentials Screening</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-450 leading-relaxed">
+              Every faculty member completes detailed reference checking, validation of academic degrees, and oral teaching mock evaluations prior to student onboarding.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center">
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">Active Industry Experience</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-450 leading-relaxed">
+              Our instructors aren't just theoreticians. They are active programmers, researchers, and professional consultants with real-world enterprise credentials.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center">
+              <i data-lucide="help-circle" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">Dedicated Office Mentorship</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-450 leading-relaxed">
+              Get access to live office hours, chat groups, and review sessions. Our instructors are directly committed to guiding you past coding errors or complex equations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Become an Instructor CTA Section (Redesigned Split Layout) -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Left 7 cols: Content & Benefits Checklist -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <span class="text-xs font-bold text-primary dark:text-indigo-400 uppercase tracking-wider block">Join Our Faculty</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-tight">
+            Share Your Expertise. <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Inspire Global Learners.</span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-350 text-sm sm:text-base leading-relaxed">
+            EduAcademy connects elite tutors with motivated candidates. We provide the studio resources, editing aids, curriculum frameworks, and global audience networks to help you succeed.
+          </p>
+          
+          <div class="grid sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex gap-3 items-start">
+              <div class="w-5 h-5 rounded-full bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm text-left">Competitive Revenue Share</h4>
+                <p class="text-slate-500 dark:text-slate-450 text-[11px] sm:text-xs text-left">Earn premium rates per student enrollment or live hours.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-3 items-start">
+              <div class="w-5 h-5 rounded-full bg-teal-500/10 text-teal-650 dark:text-teal-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm text-left">Studio Production Support</h4>
+                <p class="text-slate-500 dark:text-slate-450 text-[11px] sm:text-xs text-left">Professional equipment guides and slide editing tools.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3 items-start">
+              <div class="w-5 h-5 rounded-full bg-pink-500/10 text-pink-655 dark:text-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm text-left">Flexible Teaching Hours</h4>
+                <p class="text-slate-500 dark:text-slate-450 text-[11px] sm:text-xs text-left">Publish asynchronous modules or set your own live calendars.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3 items-start">
+              <div class="w-5 h-5 rounded-full bg-indigo-500/10 text-indigo-655 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm text-left">Global Impact Metrics</h4>
+                <p class="text-slate-500 dark:text-slate-450 text-[11px] sm:text-xs text-left">Teach across 120+ countries and track class statistics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right 5 cols: Glass Card CTA Widget -->
+        <div class="lg:col-span-5">
+          <div class="bg-white dark:bg-slate-950 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6 text-left">
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Start Your Application</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Submit your core credentials and we'll reply within 3 business days.</p>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <label class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Academic Specialty</label>
+                <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs focus:ring-1 focus:ring-primary focus:outline-none dark:text-white">
+                  <option>Coding & Web Development</option>
+                  <option>Mathematics & Calculus</option>
+                  <option>Physics & Chemistry</option>
+                  <option>Spanish & Linguistics</option>
+                </select>
+              </div>
+              
+              <div class="space-y-1">
+                <label class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Years of Experience</label>
+                <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs focus:ring-1 focus:ring-primary focus:outline-none dark:text-white">
+                  <option>1-3 Years</option>
+                  <option>3-5 Years</option>
+                  <option>5+ Years</option>
+                </select>
+              </div>
+            </div>
+            
+            <a href="contact.html" class="w-full btn-primary inline-flex items-center justify-center gap-1.5 py-3 font-semibold shadow-md shadow-primary/20 text-xs text-center">
+              Apply to Teach <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
       </div>

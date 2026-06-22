@@ -188,15 +188,54 @@
 
   <!-- Main Content Area -->
   <main class="page-transition animate-fadeIn">
-    <!-- Breadcrumbs -->
-    <section class="py-12 bg-slate-100 dark:bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
-        <p class="text-xs text-slate-500 dark:text-slate-400">
-          <a href="index.html" class="hover:underline">Home</a> &middot; 
-          <a href="courses.html" class="hover:underline">Catalog</a> &middot; 
-          <span class="text-primary font-semibold">Course Details</span>
-        </p>
-        <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Introduction to Web Development with HTML & CSS</h1>
+    <!-- Premium Hero Section -->
+    <section class="relative py-20 overflow-hidden bg-slate-900 text-white">
+      <!-- Radial gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-950 to-teal-950/80 z-0"></div>
+      <div class="absolute inset-0 bg-[url('../assets/images/hero-bg.png')] bg-cover opacity-10 bg-center mix-blend-overlay z-0"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-6">
+        <div class="max-w-3xl space-y-4">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i> Best Seller
+          </span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading tracking-tight leading-tight">
+            Introduction to Web Development with HTML & CSS
+          </h1>
+          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+            Master the building blocks of the modern web. Learn structure, semantic elements, responsive grid layouts, and Tailwind CSS implementation from scratch.
+          </p>
+          
+          <!-- Hero Metadata Row -->
+          <div class="flex flex-wrap items-center gap-y-3 gap-x-6 pt-4 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-center gap-1.5 text-amber-400">
+              <span class="font-bold text-white text-base">4.9</span>
+              <div class="flex items-center">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <span class="text-slate-400">(1,420 ratings)</span>
+            </div>
+            
+            <div class="flex items-center gap-1.5 text-slate-300">
+              <i data-lucide="users" class="w-4.5 h-4.5 text-indigo-300"></i>
+              <span>12,450 students enrolled</span>
+            </div>
+            
+            <div class="flex items-center gap-1.5 text-slate-300">
+              <i data-lucide="refresh-cw" class="w-4.5 h-4.5 text-teal-300"></i>
+              <span>Last updated 06/2026</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-slate-300">
+              <i data-lucide="globe" class="w-4.5 h-4.5 text-indigo-400"></i>
+              <span>English [Auto]</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -207,84 +246,402 @@
         <!-- Left 2 Cols: Syllabus, Tutor Details, FAQ, Reviews -->
         <div class="lg:col-span-2 space-y-12">
           
+          <!-- What You'll Learn Grid -->
+          <div class="p-6 sm:p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl space-y-6">
+            <h2 class="text-2xl font-bold font-heading text-slate-900 dark:text-white">What You'll Learn</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm text-slate-700 dark:text-slate-300">Build responsive, mobile-first websites from absolute scratch.</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm text-slate-700 dark:text-slate-300">Write clean, accessible, semantic HTML5 code.</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm text-slate-700 dark:text-slate-300">Master CSS layouts including Flexbox, CSS Grid, and animations.</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm text-slate-700 dark:text-slate-300">Implement custom utilities and build faster with Tailwind CSS.</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm text-slate-700 dark:text-slate-300">Optimize site speed and SEO best practices.</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-sm text-slate-700 dark:text-slate-300">Deploy live websites to global hosting networks.</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Course details metadata -->
           <div class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Course Summary</h2>
-            <p class="text-slate-650 dark:text-slate-300 leading-relaxed text-sm">
+            <h2 class="text-2xl font-bold font-heading text-slate-900 dark:text-white">Course Summary</h2>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
               This curriculum is built from scratch for aspiring computer engineers and layout design enthusiasts. Over 12 structured modules, students learn how semantic markup, absolute layouts, flexbox coordinates, form validation, and responsive stylesheets work together to build stunning user applications.
             </p>
           </div>
 
           <!-- Syllabus Modules (Accordion UI) -->
-          <div class="space-y-4">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Curriculum & Syllabus</h2>
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold font-heading text-slate-900 dark:text-white">Curriculum & Syllabus</h2>
             <div class="space-y-3">
               <!-- Module 1 -->
-              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900">
+                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-100/50 hover:bg-slate-100 dark:bg-slate-900/50 dark:hover:bg-slate-800 transition-colors">
                   <span class="font-bold text-slate-900 dark:text-white text-sm">Module 1: Foundations of HTML5 Semantic Markup</span>
                   <i data-lucide="chevron-down" class="faq-icon w-4.5 h-4.5 text-slate-400 transition-transform"></i>
                 </button>
-                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-2">
+                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-3">
                   <p>Study standard structures: headers, footers, main containers, articles, navigation boxes, and search overlays. Keyboard accessibility and screen reader rules.</p>
-                  <span class="text-[10px] text-slate-400 block">3 Lessons · 1h 45m</span>
+                  <ul class="space-y-1.5 pl-4 list-disc text-slate-500 dark:text-slate-400">
+                    <li>Understanding semantic tags vs generic divs</li>
+                    <li>Creating accessible documents with ARIA landmarks</li>
+                    <li>Structuring complex tables and interactive elements</li>
+                  </ul>
+                  <span class="text-[10px] text-slate-400 block font-semibold">3 Lessons · 1h 45m</span>
                 </div>
               </div>
 
               <!-- Module 2 -->
-              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                  <span class="font-bold text-slate-900 dark:text-white text-sm">Module 2: Tailwind CSS & Styling Systems</span>
+              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900">
+                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-100/50 hover:bg-slate-100 dark:bg-slate-900/50 dark:hover:bg-slate-800 transition-colors">
+                  <span class="font-bold text-slate-900 dark:text-white text-sm">Module 2: CSS Core Concepts & Modern Layouts (Flexbox/Grid)</span>
                   <i data-lucide="chevron-down" class="faq-icon w-4.5 h-4.5 text-slate-400 transition-transform"></i>
                 </button>
-                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-2">
-                  <p>Utility classes vs custom CSS variables. Color systems, typography properties, custom themes, dark mode variants, and responsive media breakpoint settings.</p>
-                  <span class="text-[10px] text-slate-400 block">4 Lessons · 2h 30m</span>
+                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-3">
+                  <p>Master box model physics, centering strategies, and responsive alignments using Flexbox flex-basis and CSS Grid template columns.</p>
+                  <ul class="space-y-1.5 pl-4 list-disc text-slate-500 dark:text-slate-400">
+                    <li>Block vs inline layouts and display rules</li>
+                    <li>Flexbox container axes, alignment, and gap options</li>
+                    <li>Building complex grids with grid-template-areas</li>
+                  </ul>
+                  <span class="text-[10px] text-slate-400 block font-semibold">4 Lessons · 2h 15m</span>
+                </div>
+              </div>
+
+              <!-- Module 3 -->
+              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900">
+                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-100/50 hover:bg-slate-100 dark:bg-slate-900/50 dark:hover:bg-slate-800 transition-colors">
+                  <span class="font-bold text-slate-900 dark:text-white text-sm">Module 3: Responsive Web Design & Tailwind CSS</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-4.5 h-4.5 text-slate-400 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-3">
+                  <p>Learn utility classes vs custom CSS variables. Color systems, typography properties, custom themes, dark mode variants, and responsive media breakpoint settings.</p>
+                  <ul class="space-y-1.5 pl-4 list-disc text-slate-500 dark:text-slate-400">
+                    <li>Mobile-first design workflow and design patterns</li>
+                    <li>Configuring tailwind.config.js for custom brand colors</li>
+                    <li>State modifiers: hover, focus, active, dark-mode</li>
+                  </ul>
+                  <span class="text-[10px] text-slate-400 block font-semibold">4 Lessons · 2h 30m</span>
+                </div>
+              </div>
+
+              <!-- Module 4 -->
+              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900">
+                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-100/50 hover:bg-slate-100 dark:bg-slate-900/50 dark:hover:bg-slate-800 transition-colors">
+                  <span class="font-bold text-slate-900 dark:text-white text-sm">Module 4: Forms, Validation, and Accessibility (A11y)</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-4.5 h-4.5 text-slate-400 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-3">
+                  <p>Implement functional forms with validation, accessible label pairing, and interactive status feedback styling.</p>
+                  <ul class="space-y-1.5 pl-4 list-disc text-slate-500 dark:text-slate-400">
+                    <li>Input types, labels, and textareas styling</li>
+                    <li>HTML5 native form validators and custom error classes</li>
+                    <li>Focus indicators and keyboard navigation loops</li>
+                  </ul>
+                  <span class="text-[10px] text-slate-400 block font-semibold">3 Lessons · 1h 50m</span>
+                </div>
+              </div>
+
+              <!-- Module 5 -->
+              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900">
+                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-100/50 hover:bg-slate-100 dark:bg-slate-900/50 dark:hover:bg-slate-800 transition-colors">
+                  <span class="font-bold text-slate-900 dark:text-white text-sm">Module 5: Dynamic Layouts & CSS Custom Customizations</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-4.5 h-4.5 text-slate-400 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-3">
+                  <p>Explore CSS custom properties, calc functions, transitions, and hover effects that make interfaces look premium.</p>
+                  <ul class="space-y-1.5 pl-4 list-disc text-slate-500 dark:text-slate-400">
+                    <li>CSS Variables runtime adjustments</li>
+                    <li>Transitions and transform micro-animations</li>
+                    <li>Glassmorphism design parameters</li>
+                  </ul>
+                  <span class="text-[10px] text-slate-400 block font-semibold">3 Lessons · 2h 05m</span>
+                </div>
+              </div>
+
+              <!-- Module 6 -->
+              <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900">
+                <button class="faq-header w-full p-5 text-left flex justify-between items-center bg-slate-100/50 hover:bg-slate-100 dark:bg-slate-900/50 dark:hover:bg-slate-800 transition-colors">
+                  <span class="font-bold text-slate-900 dark:text-white text-sm">Module 6: Capstone Project: High-Fidelity Portfolio Design</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-4.5 h-4.5 text-slate-400 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 bg-white dark:bg-slate-950 text-xs text-slate-600 dark:text-slate-350 border-t border-slate-150 dark:border-slate-800 space-y-3">
+                  <p>Integrate everything learned to create a full portfolio site, complete with landing hero, work grids, filter logic, and contact elements.</p>
+                  <ul class="space-y-1.5 pl-4 list-disc text-slate-500 dark:text-slate-400">
+                    <li>Project setup and folder architecture</li>
+                    <li>Structuring pages and cross-navigation links</li>
+                    <li>Hosting deployment workflows (GitHub Pages/Vercel)</li>
+                  </ul>
+                  <span class="text-[10px] text-slate-400 block font-semibold">7 Lessons · 4h 30m</span>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Requirements Section -->
+          <div class="space-y-4">
+            <h2 class="text-2xl font-bold font-heading text-slate-900 dark:text-white">Requirements & Prerequisites</h2>
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="circle-dot" class="w-4 h-4 text-indigo-600 mt-1 flex-shrink-0"></i>
+                <span>No prior coding or web design experience required. We start completely from scratch.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="circle-dot" class="w-4 h-4 text-indigo-600 mt-1 flex-shrink-0"></i>
+                <span>A working computer (Windows, macOS, or Linux) with connection to the internet.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="circle-dot" class="w-4 h-4 text-indigo-600 mt-1 flex-shrink-0"></i>
+                <span>We will install VS Code and relevant extensions together during the first modules.</span>
+              </li>
+            </ul>
+          </div>
+
           <!-- Tutor Details -->
-          <div class="p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
-            <div class="w-20 h-20 rounded-full bg-indigo-150 dark:bg-slate-800 flex items-center justify-center text-primary text-xl font-bold flex-shrink-0">
-              JD
-            </div>
-            <div class="space-y-2 text-center sm:text-left">
-              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Taught by Dr. John Doe</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-widest font-semibold">Lead Instructor</p>
-              <p class="text-xs text-slate-650 dark:text-slate-350 leading-relaxed">
-                Dr. John Doe has mentored thousands of computer science candidates over a decade. His research covers web accessibility standards and UI design systems.
+          <div class="p-6 sm:p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <img src="../assets/images/instructor-david.png" alt="Dr. David Miller" class="w-24 h-24 rounded-2xl object-cover border-2 border-indigo-500/20 dark:border-slate-700 flex-shrink-0">
+            <div class="space-y-3 text-center sm:text-left flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-lg">Dr. David Miller</h3>
+                  <p class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold uppercase tracking-wider">Lead Instructor & Tech Specialist</p>
+                </div>
+                <div class="flex items-center justify-center sm:justify-start gap-3 text-slate-400 dark:text-slate-500">
+                  <a href="#" class="hover:text-indigo-600 transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                  <a href="#" class="hover:text-indigo-600 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                  <a href="#" class="hover:text-indigo-600 transition-colors"><i data-lucide="globe" class="w-4 h-4"></i></a>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed">
+                Dr. David Miller has mentored thousands of computer science candidates over a decade. His research covers web accessibility standards and UI design systems. He formerly worked as a Principal Systems Analyst at several industry hubs.
               </p>
+              <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-6 gap-y-2 text-xs text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
+                <span class="flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 text-amber-500 fill-current"></i> 4.9 Instructor Rating</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-indigo-600"></i> 14 Courses</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-teal-650 dark:text-teal-400"></i> 32,840 Students</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review Dashboard Section -->
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold font-heading text-slate-900 dark:text-white">Student Reviews</h2>
+            
+            <div class="grid sm:grid-cols-3 gap-6 p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl">
+              <div class="flex flex-col items-center justify-center text-center space-y-2 sm:border-r border-slate-200 dark:border-slate-800 py-4">
+                <span class="text-5xl font-extrabold text-slate-950 dark:text-white">4.9</span>
+                <div class="flex text-amber-550">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Course Rating</span>
+              </div>
+              
+              <div class="sm:col-span-2 flex flex-col justify-center space-y-2 px-2 sm:px-4">
+                <!-- 5 star row -->
+                <div class="flex items-center gap-3 text-xs">
+                  <span class="w-12 text-right font-medium text-slate-600 dark:text-slate-400">5 stars</span>
+                  <div class="flex-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 w-[92%] rounded-full"></div>
+                  </div>
+                  <span class="w-8 text-slate-400">92%</span>
+                </div>
+                <!-- 4 star row -->
+                <div class="flex items-center gap-3 text-xs">
+                  <span class="w-12 text-right font-medium text-slate-600 dark:text-slate-400">4 stars</span>
+                  <div class="flex-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 w-[6%] rounded-full"></div>
+                  </div>
+                  <span class="w-8 text-slate-400">6%</span>
+                </div>
+                <!-- 3 star row -->
+                <div class="flex items-center gap-3 text-xs">
+                  <span class="w-12 text-right font-medium text-slate-600 dark:text-slate-400">3 stars</span>
+                  <div class="flex-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 w-[1%] rounded-full"></div>
+                  </div>
+                  <span class="w-8 text-slate-400">1%</span>
+                </div>
+                <!-- 2 star row -->
+                <div class="flex items-center gap-3 text-xs">
+                  <span class="w-12 text-right font-medium text-slate-600 dark:text-slate-400">2 stars</span>
+                  <div class="flex-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 w-[0.5%] rounded-full"></div>
+                  </div>
+                  <span class="w-8 text-slate-400">&lt;1%</span>
+                </div>
+                <!-- 1 star row -->
+                <div class="flex items-center gap-3 text-xs">
+                  <span class="w-12 text-right font-medium text-slate-600 dark:text-slate-400">1 star</span>
+                  <div class="flex-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 w-[0.5%] rounded-full"></div>
+                  </div>
+                  <span class="w-8 text-slate-400">&lt;1%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Items -->
+            <div class="space-y-4">
+              <!-- Card 1 -->
+              <div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm">
+                      AS
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 dark:text-white text-sm">Alex Sanders</h4>
+                      <span class="text-[10px] text-slate-400">2 weeks ago</span>
+                    </div>
+                  </div>
+                  <div class="flex text-amber-550">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                  </div>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed">
+                  "This course was exactly what I needed. The explanations are extremely clear and the capstone portfolio project was highly educational. Highly recommended for absolute beginners!"
+                </p>
+              </div>
+              
+              <!-- Card 2 -->
+              <div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-teal-500/10 text-teal-650 dark:text-teal-400 flex items-center justify-center font-bold text-sm">
+                      LM
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-900 dark:text-white text-sm">Lina Martinez</h4>
+                      <span class="text-[10px] text-slate-400">1 month ago</span>
+                    </div>
+                  </div>
+                  <div class="flex text-amber-555">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                  </div>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed">
+                  "Dr. David Miller explains concepts in a structured and easy-to-follow format. The modules are bite-sized, making it easy to learn along while working a full-time job. Tailwind CSS section is phenomenal!"
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Right 1 Col: Purchase / Enrollment CTA Widget -->
         <div>
-          <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6 sticky top-20">
-            <div class="space-y-2">
-              <span class="text-xs font-bold text-slate-400 uppercase">Enrollment Options</span>
-              <p class="text-3xl font-extrabold text-slate-950 dark:text-white">$49.99</p>
-              <span class="text-xs text-emerald-500 font-semibold block">One-time payment. Lifetime access.</span>
+          <div class="bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden lg:sticky lg:top-24 lg:self-start">
+            <!-- Card Preview Image -->
+            <div class="relative aspect-video w-full overflow-hidden bg-slate-100">
+              <img src="../assets/images/course-webdev.png" alt="Course Preview" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-slate-950/40 flex items-center justify-center">
+                <button class="w-14 h-14 rounded-full bg-white text-indigo-650 hover:text-indigo-700 flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-200" aria-label="Play Trailer">
+                  <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                </button>
+              </div>
             </div>
-
-            <a href="enroll.html" class="btn-primary w-full text-center">
-              Enroll in Course
-            </a>
-
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-3 text-xs text-slate-600 dark:text-slate-350">
-              <div class="flex items-center space-x-2">
-                <i data-lucide="clock" class="w-4 h-4 text-primary"></i>
-                <span>12 Weeks duration</span>
+            
+            <div class="p-6 sm:p-8 space-y-6">
+              <div class="space-y-2">
+                <div class="flex items-center gap-3">
+                  <span class="text-3xl font-extrabold text-slate-950 dark:text-white">$49.99</span>
+                  <span class="text-sm text-slate-400 dark:text-slate-500 line-through">$129.99</span>
+                  <span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 rounded-md">62% OFF</span>
+                </div>
+                <span class="text-xs text-emerald-500 font-semibold block">One-time payment. Lifetime access.</span>
               </div>
-              <div class="flex items-center space-x-2">
-                <i data-lucide="book-open" class="w-4 h-4 text-primary"></i>
-                <span>24 Lessons syllabus</span>
+
+              <div class="flex flex-col gap-3">
+                <a href="enroll.html" class="btn-primary w-full text-center py-3 font-semibold shadow-md shadow-primary/20">
+                  Enroll in Course
+                </a>
+                <a href="#" class="btn-secondary w-full text-center py-3 font-semibold">
+                  Add to Wishlist
+                </a>
               </div>
-              <div class="flex items-center space-x-2">
-                <i data-lucide="award" class="w-4 h-4 text-primary"></i>
-                <span>Verified certification download</span>
+
+              <div class="border-t border-slate-200 dark:border-slate-800 pt-6 space-y-4">
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">This Course Includes:</span>
+                
+                <div class="space-y-3 text-xs text-slate-600 dark:text-slate-350">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <i data-lucide="clock" class="w-4 h-4 text-indigo-650 dark:text-indigo-400"></i>
+                      <span>Duration</span>
+                    </div>
+                    <span class="font-semibold text-slate-900 dark:text-white">12 Weeks</span>
+                  </div>
+                  
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <i data-lucide="book-open" class="w-4 h-4 text-indigo-650 dark:text-indigo-400"></i>
+                      <span>Syllabus</span>
+                    </div>
+                    <span class="font-semibold text-slate-900 dark:text-white">24 Lessons</span>
+                  </div>
+                  
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <i data-lucide="award" class="w-4 h-4 text-indigo-650 dark:text-indigo-400"></i>
+                      <span>Certificate</span>
+                    </div>
+                    <span class="font-semibold text-slate-900 dark:text-white">Included</span>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <i data-lucide="smartphone" class="w-4 h-4 text-indigo-650 dark:text-indigo-400"></i>
+                      <span>Access</span>
+                    </div>
+                    <span class="font-semibold text-slate-900 dark:text-white">Mobile and TV</span>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <i data-lucide="download" class="w-4 h-4 text-indigo-650 dark:text-indigo-400"></i>
+                      <span>Resources</span>
+                    </div>
+                    <span class="font-semibold text-slate-900 dark:text-white">12 Downloadable Files</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
