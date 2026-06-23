@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-transition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — EduAcademy</title>
+  <meta name="description" content="We are building something amazing! Stay tuned for the release of new features.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5',
+              light: '#e0e7ff',
+              dark: '#3730a3',
+              hover: '#4338ca',
+            },
+            secondary: {
+              DEFAULT: '#0d9488',
+              light: '#ccfbf1',
+              dark: '#115e59',
+              hover: '#0f766e',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="w-full min-h-0 md:min-h-screen flex flex-col justify-between bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body transition-colors duration-300 relative overflow-x-hidden">
+  
+  <!-- Ambient background blurs wrapper to prevent scroll overflow -->
+  <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-72 sm:w-[600px] h-72 sm:h-[300px] bg-primary/10 rounded-full blur-[80px] sm:blur-[100px]"></div>
+    <div class="absolute -bottom-40 left-1/2 -translate-x-1/2 w-72 sm:w-[500px] h-72 sm:h-[250px] bg-secondary/10 rounded-full blur-[80px] sm:blur-[90px]"></div>
+  </div>
+
+  <!-- Header Section with Toggles -->
+  <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between relative z-10">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
+      <span class="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+    </a>
+    <div class="flex items-center gap-2">
+      <!-- RTL Toggle -->
+      <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle LTR/RTL">
+        RTL
+      </button>
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle-btn w-9 h-9 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle Theme">
+        <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Card Container -->
+  <main class="flex-1 flex items-center justify-center px-4 py-4 sm:py-6 relative z-10">
+    <div class="max-w-xl w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl text-center space-y-6 sm:space-y-8">
+      
+      <!-- Small Announcement Badge -->
+      <div class="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-150 dark:border-indigo-900/60">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        <span class="text-[9px] font-bold text-primary dark:text-indigo-200 tracking-wider">UNDER CONSTRUCTION</span>
+      </div>
+
+      <div class="space-y-3">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading">
+          Bespoke Features <br class="hidden sm:inline">are <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Coming Soon</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-655 dark:text-slate-400 leading-relaxed max-w-md mx-auto">
+          We are currently engineering our live interactive whiteboard spaces and peer-study group channels. We'll be ready shortly!
+        </p>
+      </div>
+
+      <!-- Live Countdown Clock -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+        <div class="bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-850 p-2 sm:p-3 rounded-xl sm:rounded-2xl">
+          <span id="days" class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white block font-heading">00</span>
+          <span class="text-[8px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5 sm:mt-1">Days</span>
+        </div>
+        <div class="bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-850 p-2 sm:p-3 rounded-xl sm:rounded-2xl">
+          <span id="hours" class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white block font-heading">00</span>
+          <span class="text-[8px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5 sm:mt-1">Hours</span>
+        </div>
+        <div class="bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-850 p-2 sm:p-3 rounded-xl sm:rounded-2xl">
+          <span id="minutes" class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white block font-heading">00</span>
+          <span class="text-[8px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5 sm:mt-1">Mins</span>
+        </div>
+        <div class="bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-850 p-2 sm:p-3 rounded-xl sm:rounded-2xl">
+          <span id="seconds" class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white block font-heading">00</span>
+          <span class="text-[8px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5 sm:mt-1">Secs</span>
+        </div>
+      </div>
+
+      <!-- Newsletter subscription form -->
+      <div class="space-y-4 max-w-md mx-auto pt-4 border-t border-slate-150 dark:border-slate-800">
+        <h4 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Subscribe to get notified</h4>
+        <form class="flex border border-slate-300 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm" onsubmit="event.preventDefault(); alert('Subscribed!')">
+          <input type="email" placeholder="Your email address" required class="flex-1 bg-slate-50 dark:bg-slate-950 border-0 focus:ring-0 text-slate-800 dark:text-slate-200 px-4 py-2.5 text-xs outline-none">
+          <button type="submit" class="bg-primary hover:bg-primary-hover px-5 text-white text-xs font-bold transition-colors">Notify Me</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Area -->
+  <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 relative z-10 border-t border-slate-200/40 dark:border-slate-800/40 gap-4">
+    <p>&copy; 2026 EduAcademy. All rights reserved.</p>
+    <div class="flex space-x-4">
+      <a href="#" class="hover:text-slate-800 dark:hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+      <a href="#" class="hover:text-slate-800 dark:hover:text-white transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+      <a href="#" class="hover:text-slate-800 dark:hover:text-white transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+      <a href="#" class="hover:text-slate-800 dark:hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // 15-Day Countdown Script
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 15);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = launchDate.getTime() - now;
+
+      if (diff <= 0) {
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

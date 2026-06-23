@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initDropdowns();
   initDashboardTabs();
   initFaqAccordion();
+  initDashboardMobileSidebar();
+  initPasswordToggle();
 });
 
 // --- Theme Management (Light / Dark) ---
@@ -161,6 +163,10 @@ function initDropdowns() {
 function initDashboardTabs() {
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
   const dashboardSections = document.querySelectorAll('.dashboard-section');
+  const headerTitle = document.getElementById('header-title');
+  const headerSubtitle = document.getElementById('header-subtitle');
+  const mobileTitles = document.querySelectorAll('.mobile-header-title');
+  const mobileSubtitles = document.querySelectorAll('.mobile-header-subtitle');
 
   if (sidebarLinks.length > 0 && dashboardSections.length > 0) {
     sidebarLinks.forEach(link => {
@@ -172,14 +178,13 @@ function initDashboardTabs() {
 
         // Update active class on sidebar items
         sidebarLinks.forEach(item => {
-          item.classList.remove('bg-indigo-700', 'text-white', 'bg-indigo-50', 'text-indigo-600', 'dark:bg-slate-700', 'dark:text-white');
+          item.classList.remove('bg-indigo-600', 'bg-indigo-750', 'bg-indigo-700', 'bg-primary', 'text-white', 'bg-indigo-50', 'text-indigo-600', 'dark:bg-slate-700', 'dark:text-white', 'bg-indigo-650');
           // Add default styling back
           item.classList.add('text-gray-600', 'hover:bg-gray-100', 'dark:text-gray-300', 'dark:hover:bg-slate-800');
         });
 
         // Add active styling to clicked item
         link.classList.remove('text-gray-600', 'hover:bg-gray-100', 'dark:text-gray-300', 'dark:hover:bg-slate-800');
-        // Check if inside dashboard (which could use blue/indigo theme)
         link.classList.add('bg-indigo-600', 'text-white');
 
         // Hide all sections
@@ -192,6 +197,31 @@ function initDashboardTabs() {
         if (targetSection) {
           targetSection.classList.remove('hidden');
         }
+
+        // Dynamic Header Title & Subtitle updates
+        const title = link.getAttribute('data-title');
+        const subtitle = link.getAttribute('data-subtitle');
+        if (headerTitle && title) {
+          headerTitle.textContent = title;
+        }
+        if (headerSubtitle && subtitle) {
+          headerSubtitle.textContent = subtitle;
+        }
+        
+        // Update mobile titles & descriptions
+        if (title) {
+          mobileTitles.forEach(el => el.textContent = title);
+        }
+        if (subtitle) {
+          mobileSubtitles.forEach(el => el.textContent = subtitle);
+        }
+
+        // Scroll main panel and window to the top
+        const mainPanel = document.querySelector('main');
+        if (mainPanel) {
+          mainPanel.scrollTop = 0;
+        }
+        window.scrollTo({ top: 0 });
       });
     });
   }
@@ -228,3 +258,73 @@ function initFaqAccordion() {
     });
   });
 }
+
+// --- Dashboard Mobile Sidebar Toggle ---
+function initDashboardMobileSidebar() {
+  const toggleBtn = document.getElementById('dashboard-sidebar-toggle');
+  const closeBtn = document.getElementById('dashboard-sidebar-close');
+  const sidebar = document.getElementById('dashboard-sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+
+  if (!toggleBtn || !sidebar || !overlay) return;
+
+  function openSidebar() {
+    overlay.classList.remove('hidden');
+    setTimeout(() => {
+      sidebar.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+      sidebar.classList.add('translate-x-0');
+      overlay.classList.remove('opacity-0');
+      overlay.classList.add('opacity-100');
+    }, 10);
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('translate-x-0');
+    sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+    }, 300);
+  }
+
+  toggleBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  // Close sidebar drawer when clicking a link on mobile
+  const sidebarLinks = sidebar.querySelectorAll('.sidebar-link');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        closeSidebar();
+      }
+    });
+  });
+}
+
+// --- Password Visibility Toggle ---
+function initPasswordToggle() {
+  const toggleBtns = document.querySelectorAll('.password-toggle-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      if (!input) return;
+
+      const showIcon = btn.querySelector('.show-icon');
+      const hideIcon = btn.querySelector('.hide-icon');
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (showIcon) showIcon.classList.add('hidden');
+        if (hideIcon) hideIcon.classList.remove('hidden');
+      } else {
+        input.type = 'password';
+        if (showIcon) showIcon.classList.remove('hidden');
+        if (hideIcon) hideIcon.classList.add('hidden');
+      }
+    });
+  });
+}
+
