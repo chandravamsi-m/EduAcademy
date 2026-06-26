@@ -296,7 +296,7 @@ function initDashboardMobileSidebar() {
   const sidebarLinks = sidebar.querySelectorAll('.sidebar-link');
   sidebarLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1024) {
         closeSidebar();
       }
     });
