@@ -49,26 +49,26 @@
   <!-- Top Bar (Header) -->
   <header class="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 h-16 flex items-center justify-between sticky top-0 z-40">
     <!-- Left Logo Section (Matches sidebar width exactly on desktop) -->
-    <div class="w-auto lg:w-56 h-full flex items-center px-4 lg:px-6 border-e border-transparent lg:border-slate-200 dark:lg:border-slate-800 shrink-0 gap-2">
+    <div class="w-auto lg:w-56 h-full flex items-center ps-3 pe-1 lg:px-6 border-e border-transparent lg:border-slate-200 dark:lg:border-slate-800 shrink-0 gap-1.5">
       <!-- Toggle Button (Mobile/Tablet Only) -->
-      <button id="dashboard-sidebar-toggle" class="lg:hidden p-1.5 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 focus-ring" aria-label="Toggle Sidebar">
+      <button id="dashboard-sidebar-toggle" class="lg:hidden p-1 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 focus-ring" aria-label="Toggle Sidebar">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-8 h-8 text-primary">
-        <span class="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
+      <a href="index.html" class="flex items-center gap-1.5">
+        <img src="../assets/images/logo.svg" alt="EduAcademy Logo" class="w-7 h-7 sm:w-8 sm:h-8 text-primary">
+        <span class="text-base sm:text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">EduAcademy</span>
       </a>
     </div>
 
     <!-- Header Actions and Dynamic Text -->
-    <div class="flex-1 flex items-center justify-end lg:justify-between ps-4 pe-2 lg:px-6 h-full">
+    <div class="flex-1 flex items-center justify-end lg:justify-between ps-2 pe-3 lg:px-6 h-full">
       <div class="hidden lg:flex flex-col">
         <h1 id="header-title" class="text-sm font-bold text-slate-900 dark:text-white leading-tight">Administrative Overview</h1>
         <p id="header-subtitle" class="text-[10px] text-slate-500 dark:text-slate-400 leading-none mt-0.5">Review real-time enrollment statistics and transaction summaries.</p>
       </div>
 
       <!-- Right Controls -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 sm:gap-4">
         <!-- Desktop Toggles (Hidden on Mobile/Tablet) -->
         <div class="hidden lg:flex items-center gap-2">
           <button class="rtl-toggle-btn h-9 px-3 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-ring text-xs flex items-center justify-center" aria-label="Toggle LTR/RTL">
@@ -191,7 +191,7 @@
       <section id="overview" class="dashboard-section space-y-6">
 
         <!-- Metric Cards Grid -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl shadow-sm space-y-3">
             <span class="text-xs text-slate-400 font-bold block uppercase">Total Students</span>
             <p class="text-3xl font-extrabold text-slate-950 dark:text-white">1,540</p>
@@ -313,6 +313,75 @@
                 </div>
               </div>
               <span class="text-[10px] text-slate-400">1 day ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW Content: System Health & Enrollment Demographic Shares -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          <!-- Server Status card -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+              <i data-lucide="server" class="w-4 h-4 text-primary"></i>
+              <span>System & Server Diagnostics</span>
+            </h4>
+            <div class="grid grid-cols-2 gap-4 text-xs">
+              <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">API Latency</span>
+                <p class="font-bold text-emerald-500 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  45ms (Optimal)
+                </p>
+              </div>
+              <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">Database Load</span>
+                <p class="font-bold text-slate-700 dark:text-slate-300">12% Active Util</p>
+              </div>
+              <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">Storage Capacity</span>
+                <p class="font-bold text-slate-700 dark:text-slate-300">34% of 100 GB</p>
+              </div>
+              <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">SSL Certificate</span>
+                <p class="font-bold text-emerald-500">Valid (280d left)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Demographic share mock card -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+              <i data-lucide="pie-chart" class="w-4 h-4 text-secondary"></i>
+              <span>Course Enrollment Shares</span>
+            </h4>
+            <div class="space-y-3.5 text-xs">
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-slate-655 dark:text-slate-350">
+                  <span class="font-semibold">Web Development Speciality</span>
+                  <span class="font-bold">42% (1,420 Enrolled)</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-850 h-2 rounded-full overflow-hidden">
+                  <div class="bg-primary h-full w-[42%]"></div>
+                </div>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-slate-655 dark:text-slate-350">
+                  <span class="font-semibold">Mathematics & Calculus</span>
+                  <span class="font-bold">30% (98 Enrolled)</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-850 h-2 rounded-full overflow-hidden">
+                  <div class="bg-purple-500 h-full w-[30%]"></div>
+                </div>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-slate-655 dark:text-slate-350">
+                  <span class="font-semibold">Languages & Science</span>
+                  <span class="font-bold">28% (60 Enrolled)</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-850 h-2 rounded-full overflow-hidden">
+                  <div class="bg-teal-500 h-full w-[28%]"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -470,121 +539,60 @@
                     <button class="text-red-500 hover:underline">Suspend</button>
                   </td>
                 </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student Name</span>
-                    <span>Sophia Taylor</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                    <span>sophia.t@domain.com</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Enrolled Count</span>
-                    <span>4 Courses</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold">Active</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 text-right">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Actions</span>
-                    <button class="text-red-500 hover:underline">Suspend</button>
-                  </td>
-                </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student Name</span>
-                    <span>Liam Davis</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                    <span>liam.d@domain.com</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Enrolled Count</span>
-                    <span>2 Courses</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold">Active</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 text-right">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Actions</span>
-                    <button class="text-red-500 hover:underline">Suspend</button>
-                  </td>
-                </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student Name</span>
-                    <span>Olivia Martinez</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                    <span>olivia.m@gmail.com</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Enrolled Count</span>
-                    <span>3 Courses</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold">Active</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 text-right">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Actions</span>
-                    <button class="text-red-500 hover:underline">Suspend</button>
-                  </td>
-                </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student Name</span>
-                    <span>Noah Garcia</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                    <span>noah.g@yahoo.com</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Enrolled Count</span>
-                    <span>1 Course</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold">Active</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 text-right">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Actions</span>
-                    <button class="text-red-500 hover:underline">Suspend</button>
-                  </td>
-                </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student Name</span>
-                    <span>Ava Rodriguez</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                    <span>ava.r@domain.com</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Enrolled Count</span>
-                    <span>0 Courses</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 text-[10px] font-bold">Pending</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 text-right">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Actions</span>
-                    <div>
-                      <button class="text-emerald-500 hover:underline mr-2">Approve</button>
-                      <button class="text-red-500 hover:underline">Reject</button>
-                    </div>
-                  </td>
-                </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- NEW Content: Student Analytics and Engagement Trends -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+            <i data-lucide="line-chart" class="w-4 h-4 text-primary"></i>
+            <span>Student Engagement Metrics & Weekly Trends</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs pt-2">
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-2">
+              <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Weekly Retainment Rate</span>
+              <div class="text-2xl font-black text-slate-900 dark:text-white">88.5%</div>
+              <p class="text-[10px] text-emerald-500 flex items-center gap-1"><i data-lucide="trending-up" class="w-3 h-3"></i> +1.2% from previous week</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-2">
+              <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Avg. Homework Submissions</span>
+              <div class="text-2xl font-black text-slate-900 dark:text-white">94.2%</div>
+              <p class="text-[10px] text-slate-500">Consistent completion frequency</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-2">
+              <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Active Student Ratio</span>
+              <div class="text-2xl font-black text-slate-900 dark:text-white">340+ Daily</div>
+              <p class="text-[10px] text-emerald-500 flex items-center gap-1"><i data-lucide="trending-up" class="w-3 h-3"></i> High live class attendance</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW Content: Student Support & Inquiry Tickets -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-3">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-primary"></i>
+              <span>Active Student Support Tickets</span>
+            </h4>
+            <span class="text-[10px] text-slate-400">2 active requests</span>
+          </div>
+          <div class="space-y-3.5 text-xs">
+            <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-850 rounded-xl">
+              <div>
+                <p class="font-bold text-slate-900 dark:text-white">Ticket #1084 — Password Recovery Issue</p>
+                <p class="text-[10px] text-slate-400">Emily Davis &middot; Created 2 hours ago</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300 text-[10px] font-bold">High Priority</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-850 rounded-xl">
+              <div>
+                <p class="font-bold text-slate-900 dark:text-white">Ticket #1085 — Quiz Submission Retry Request</p>
+                <p class="text-[10px] text-slate-400">John Doe &middot; Created 5 hours ago</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 text-[10px] font-bold">Medium Priority</span>
+            </div>
           </div>
         </div>
       </section>
@@ -715,6 +723,65 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- NEW Content: Pending Recruits Applications -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-3">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+              <i data-lucide="users-2" class="w-4 h-4 text-secondary"></i>
+              <span>Instructor Applications Queue</span>
+            </h4>
+            <span class="px-2 py-0.5 rounded bg-primary-light text-primary dark:bg-indigo-950 dark:text-indigo-200 text-[10px] font-bold">2 Pending Review</span>
+          </div>
+          
+          <div class="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
+            <div class="py-3 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-900 dark:text-white text-sm">Dr. Emily Taylor</p>
+                <p class="text-[10px] text-slate-400">PhD, Stanford Physics &middot; Applied for Classical Mechanics Track</p>
+              </div>
+              <div class="space-x-2">
+                <button class="px-3 py-1.5 bg-primary text-white text-[10px] font-bold rounded-lg hover:bg-primary-hover shadow-sm">Schedule Interview</button>
+                <button class="px-3 py-1.5 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-600 dark:text-slate-350 text-[10px] font-semibold rounded-lg">View CV</button>
+              </div>
+            </div>
+            <div class="py-3 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-900 dark:text-white text-sm">Marcus Vance</p>
+                <p class="text-[10px] text-slate-400">Senior Staff Dev &middot; Applied for Advanced Algorithms & Python specialties</p>
+              </div>
+              <div class="space-x-2">
+                <button class="px-3 py-1.5 bg-primary text-white text-[10px] font-bold rounded-lg hover:bg-primary-hover shadow-sm">Schedule Interview</button>
+                <button class="px-3 py-1.5 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-600 dark:text-slate-350 text-[10px] font-semibold rounded-lg">View CV</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW Content: Tutor Hours Leaderboard & Availability Heatmap -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-amber-500"></i>
+            <span>Tutor Performance & Monthly Teaching Hours</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs pt-2">
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="font-bold text-slate-900 dark:text-white block">Dr. Maria Silva</span>
+              <p class="text-slate-400 text-[10px]">Mathematics & Calculus</p>
+              <div class="text-base font-black text-primary mt-1">140 Hours Taught</div>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="font-bold text-slate-900 dark:text-white block">Dr. Alex Harris</span>
+              <p class="text-slate-400 text-[10px]">Web Development & CSS</p>
+              <div class="text-base font-black text-primary mt-1">120 Hours Taught</div>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="font-bold text-slate-900 dark:text-white block">Dr. Sarah Jenkins</span>
+              <p class="text-slate-400 text-[10px]">Programming & Python</p>
+              <div class="text-base font-black text-primary mt-1">95 Hours Taught</div>
+            </div>
           </div>
         </div>
       </section>
@@ -863,6 +930,68 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- NEW Content: Course Rating Analysis -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+            <i data-lucide="star" class="w-4 h-4 text-amber-500 fill-amber-500"></i>
+            <span>Course Popularity & Rating Analytics</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs pt-2">
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-2 border border-slate-100 dark:border-slate-800">
+              <h5 class="font-bold text-slate-900 dark:text-white">Web Development Intro</h5>
+              <div class="flex items-center gap-1.5 text-amber-500 font-bold text-sm">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <span>4.9 / 5.0</span>
+              </div>
+              <p class="text-[10px] text-slate-450 text-slate-400">1,240 active students enrolled</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-2 border border-slate-100 dark:border-slate-800">
+              <h5 class="font-bold text-slate-900 dark:text-white">Advanced Calculus</h5>
+              <div class="flex items-center gap-1.5 text-amber-500 font-bold text-sm">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <span>4.8 / 5.0</span>
+              </div>
+              <p class="text-[10px] text-slate-450 text-slate-400">98 active students enrolled</p>
+            </div>
+            <div class="p-4 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-2 border border-slate-100 dark:border-slate-800">
+              <h5 class="font-bold text-slate-900 dark:text-white">Beginner Spanish</h5>
+              <div class="flex items-center gap-1.5 text-amber-500 font-bold text-sm">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <span>4.7 / 5.0</span>
+              </div>
+              <p class="text-[10px] text-slate-450 text-slate-400">22 active students enrolled</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW Content: Curriculum Load Capacity Tracker -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4 text-primary"></i>
+            <span>Curriculum Category Slots & Capacity Load</span>
+          </h4>
+          <div class="space-y-3 text-xs">
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-655 dark:text-slate-350">
+                <span class="font-semibold">Development Category Slots</span>
+                <span class="font-bold text-red-500">85% Capacity (Near Max)</span>
+              </div>
+              <div class="w-full bg-slate-100 dark:bg-slate-850 h-2 rounded-full overflow-hidden">
+                <div class="bg-red-500 h-full w-[85%]"></div>
+              </div>
+            </div>
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-655 dark:text-slate-350">
+                <span class="font-semibold">Mathematics Category Slots</span>
+                <span class="font-bold text-emerald-500">45% Capacity (Balanced)</span>
+              </div>
+              <div class="w-full bg-slate-100 dark:bg-slate-850 h-2 rounded-full overflow-hidden">
+                <div class="bg-emerald-500 h-full w-[45%]"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1016,52 +1145,61 @@
                     <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold">Completed</span>
                   </td>
                 </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-mono">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Ref ID</span>
-                    <span>TXN-49210</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student</span>
-                    <span>Sophia Taylor</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold text-primary">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Amount</span>
-                    <span>$79.99</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Date</span>
-                    <span>June 22, 2026</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold">Completed</span>
-                  </td>
-                </tr>
-                <tr class="block md:table-row border border-slate-200 dark:border-slate-800 md:border-none p-4 rounded-2xl mb-4 md:mb-0 space-y-2 md:space-y-0 bg-white dark:bg-slate-900">
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-mono">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Ref ID</span>
-                    <span>TXN-49211</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Student</span>
-                    <span>Liam Davis</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0 font-bold text-primary">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Amount</span>
-                    <span>$49.99</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4 border-b border-slate-100 dark:border-slate-800/40 md:border-b-0">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Date</span>
-                    <span>June 23, 2026</span>
-                  </td>
-                  <td class="flex justify-between items-center md:table-cell py-1.5 md:p-4">
-                    <span class="md:hidden text-[10px] font-bold text-slate-400 uppercase tracking-wider">Status</span>
-                    <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 text-[10px] font-bold">Pending</span>
-                  </td>
-                </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- NEW Content: Revenue Payout Overview -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-slate-100 dark:border-slate-800 pb-3 gap-2">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+              <i data-lucide="wallet" class="w-4 h-4 text-primary"></i>
+              <span>Monthly Instructor Payout Queue & Gateway Status</span>
+            </h4>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Next batch: July 30, 2026</span>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs pt-2">
+            <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Pending Payouts</span>
+              <p class="font-bold text-slate-900 dark:text-white text-base">$8,400.00</p>
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Stripe Gateway</span>
+              <p class="font-bold text-emerald-500 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Online
+              </p>
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">PayPal Gateway</span>
+              <p class="font-bold text-emerald-500 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Online
+              </p>
+            </div>
+            <div class="p-3 bg-slate-50 dark:bg-slate-850 rounded-xl space-y-1">
+              <span class="text-[10px] text-slate-400 font-bold uppercase block">Bank Transfers Batch</span>
+              <p class="font-bold text-primary">Active Process</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW Content: Financial Revenue Forecast & Targets -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-4 h-4 text-primary"></i>
+            <span>Monthly Revenue Growth Target Progress</span>
+          </h4>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between text-slate-655 dark:text-slate-350">
+              <span class="font-semibold">Current Revenue ($12,450.00) vs. Target ($15,000.00)</span>
+              <span class="font-bold">83% Achieved</span>
+            </div>
+            <div class="w-full bg-slate-100 dark:bg-slate-850 h-2 rounded-full overflow-hidden">
+              <div class="bg-primary h-full w-[83%]"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -1120,6 +1258,32 @@
             Save Admin Preferences
           </button>
         </form>
+
+        <!-- NEW Content: System Version & Maintenance Logs -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-3">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
+            <i data-lucide="info" class="w-4 h-4 text-slate-400"></i>
+            <span>System Metadata & Diagnostics info</span>
+          </h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[10px] text-slate-500 font-medium">
+            <div>
+              <span class="block uppercase font-bold text-slate-400">Core Engine version</span>
+              <p class="text-xs font-bold text-slate-850 dark:text-white mt-0.5">v2.4.1-stable</p>
+            </div>
+            <div>
+              <span class="block uppercase font-bold text-slate-400">Database Schema</span>
+              <p class="text-xs font-bold text-slate-850 dark:text-white mt-0.5">v1.9.0-R3</p>
+            </div>
+            <div>
+              <span class="block uppercase font-bold text-slate-400">Last System Cron</span>
+              <p class="text-xs font-bold text-slate-850 dark:text-white mt-0.5">Today, 3:00 AM</p>
+            </div>
+            <div>
+              <span class="block uppercase font-bold text-slate-400">Active Admin Sessions</span>
+              <p class="text-xs font-bold text-emerald-500 mt-0.5">1 Session (Current)</p>
+            </div>
+          </div>
+        </div>
       </section>
       
     </main>
